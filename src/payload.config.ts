@@ -1,6 +1,7 @@
 import sharp from "sharp";
 
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
+import { lexical } from "@/payload/fields/lexical";
 import { buildConfig } from "payload";
 
 import path from "path";
@@ -9,7 +10,6 @@ import { fileURLToPath } from "url";
 import { collections } from "@/payload/collections";
 import { Users } from "@/payload/collections/users/schema";
 
-import { lexical } from "@/payload/fields/lexical";
 import { resend } from "@/payload/fields/resend";
 
 import { plugins } from "@/payload/plugins/schema";
