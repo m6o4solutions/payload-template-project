@@ -1,3 +1,5 @@
+import { isPublic } from "@/payload/access/access-control";
+
 import type { CollectionConfig } from "payload";
 
 const Media: CollectionConfig = {
@@ -6,10 +8,8 @@ const Media: CollectionConfig = {
 		singular: "Media",
 		plural: "Media",
 	},
-
 	access: {
-		// anyone can read
-		read: () => true,
+		read: isPublic,
 	},
 	fields: [
 		{
