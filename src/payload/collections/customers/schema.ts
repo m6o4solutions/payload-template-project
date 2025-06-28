@@ -11,12 +11,14 @@ const Customers: CollectionConfig = {
 			name: "clerkUserId",
 			type: "text",
 			label: "Clerk User ID",
+			unique: true,
 			required: true,
 		},
 		{
 			name: "email",
 			type: "email",
 			label: "Email",
+			unique: true,
 			required: true,
 		},
 		{
