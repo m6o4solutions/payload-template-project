@@ -10,6 +10,7 @@ const isPublicRoute = createRouteMatcher([
 ]);
 
 export default clerkMiddleware(async (auth, req) => {
+	// allow access to public routes, but protect all other routes
 	if (!isPublicRoute(req)) {
 		await auth.protect();
 	}
@@ -17,7 +18,7 @@ export default clerkMiddleware(async (auth, req) => {
 
 export const config = {
 	matcher: [
-		// skip Next.js internals and all static files, unless found in search params
+		// skip next.js internals and all static files, unless found in search params
 		"/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
 		// always run for api routes
 		"/(api|trpc)(.*)",

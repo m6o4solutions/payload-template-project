@@ -67,6 +67,7 @@ export interface Config {
   };
   blocks: {};
   collections: {
+    customers: Customer;
     media: Media;
     users: User;
     'payload-locked-documents': PayloadLockedDocument;
@@ -75,6 +76,7 @@ export interface Config {
   };
   collectionsJoins: {};
   collectionsSelect: {
+    customers: CustomersSelect<false> | CustomersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
@@ -112,6 +114,20 @@ export interface UserAuthOperations {
     email: string;
     password: string;
   };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "customers".
+ */
+export interface Customer {
+  id: string;
+  clerkUserId: string;
+  email: string;
+  firstName?: string | null;
+  lastName?: string | null;
+  imageUrl?: string | null;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -230,6 +246,10 @@ export interface PayloadLockedDocument {
   id: string;
   document?:
     | ({
+        relationTo: 'customers';
+        value: string | Customer;
+      } | null)
+    | ({
         relationTo: 'media';
         value: string | Media;
       } | null)
@@ -278,6 +298,19 @@ export interface PayloadMigration {
   batch?: number | null;
   updatedAt: string;
   createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "customers_select".
+ */
+export interface CustomersSelect<T extends boolean = true> {
+  clerkUserId?: T;
+  email?: T;
+  firstName?: T;
+  lastName?: T;
+  imageUrl?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
