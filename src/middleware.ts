@@ -1,5 +1,6 @@
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 
+// this middleware protects all routes except the public ones defined below.
 const isPublicRoute = createRouteMatcher([
 	"/",
 	"/admin(.*)",

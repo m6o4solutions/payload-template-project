@@ -1,11 +1,11 @@
 import { Container } from "@/components/container";
 
-const Header = () => {
+const FooterServer = () => {
 	return (
 		<Container>
-			<div>The Header Goes Here</div>
+			<div>The Footer Goes Here</div>
 		</Container>
 	);
 };
 
-export { Header };
+export { FooterServer };
