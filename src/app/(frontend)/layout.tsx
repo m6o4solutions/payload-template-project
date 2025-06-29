@@ -6,8 +6,8 @@ import { cn } from "@/utils";
 
 import { ThemeProvider } from "@/components/providers/theme-provider";
 
-import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
+import { FooterServer as Footer } from "@/payload/blocks/global/footer/server";
+import { HeaderServer as Header } from "@/payload/blocks/global/header/server";
 
 import type { Metadata } from "next";
 
