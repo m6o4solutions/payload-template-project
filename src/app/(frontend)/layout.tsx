@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import Script from "next/script";
 import { Comfortaa as FontHeader, Montserrat as FontBody } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 
@@ -27,6 +28,15 @@ const RootLayout = async ({ children }: Readonly<{ children: ReactNode }>) => {
 			<html lang="en" suppressHydrationWarning className={cn(fontHeader.variable, fontBody.variable)}>
 				<head>
 					<link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+					<Script id="clarity-script" strategy="afterInteractive">
+						{`
+							(function(c,l,a,r,i,t,y){
+								c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+								t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+								y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+							})(window, document, "clarity", "script", "s8j4ufr6j0");
+						`}
+					</Script>
 				</head>
 
 				<body className="font-body flex h-screen flex-col">
