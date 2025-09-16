@@ -6,6 +6,11 @@ const envSchema = zod.object({
 	RESEND_API_KEY: zod.string().nonempty(),
 	RESEND_FROM_EMAIL: zod.string().nonempty(),
 	RESEND_FROM_NAME: zod.string().nonempty(),
+	S3_BUCKET_NAME: zod.string().nonempty(),
+	S3_ENDPOINT: zod.string().nonempty(),
+	S3_ACCESS_KEY: zod.string().nonempty(),
+	S3_SECRET_KEY: zod.string().nonempty(),
+	S3_REGION: zod.string().nonempty(),
 	UPLOADTHING_TOKEN: zod.string().nonempty(),
 	NEXT_PUBLIC_SERVER_URL: zod.string().nonempty(),
 });
