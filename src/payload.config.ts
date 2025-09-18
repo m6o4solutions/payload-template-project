@@ -14,8 +14,6 @@ import { resend } from "@/payload/fields/resend";
 
 import { plugins } from "@/payload/plugins/schema";
 
-import { env } from "@/lib/env";
-
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
@@ -30,12 +28,12 @@ export default buildConfig({
 		user: Users.slug,
 	},
 	collections: collections,
-	db: mongooseAdapter({ url: env.DATABASE_URI }),
+	db: mongooseAdapter({ url: process.env.DATABASE_URI || "" }),
 	editor: lexical,
 	email: resend,
 	globals: [],
 	plugins: [...plugins],
-	secret: env.PAYLOAD_SECRET,
+	secret: process.env.PAYLOAD_SECRET || "",
 	sharp,
 	typescript: {
 		autoGenerate: true,
