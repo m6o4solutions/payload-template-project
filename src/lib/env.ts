@@ -16,20 +16,20 @@ const strictSchema = zod.object({
 	NEXT_PUBLIC_SERVER_URL: zod.string().nonempty(""),
 });
 
-// lenient schema for build-time (defaults to empty strings)
+// lenient schema for build-time
 const lenientSchema = zod.object({
-	DATABASE_URI: zod.string().default(""),
-	PAYLOAD_SECRET: zod.string().default(""),
-	RESEND_API_KEY: zod.string().default(""),
-	RESEND_FROM_EMAIL: zod.string().default(""),
-	RESEND_FROM_NAME: zod.string().default(""),
-	S3_BUCKET_NAME: zod.string().default(""),
-	S3_ENDPOINT: zod.string().default(""),
-	S3_ACCESS_KEY: zod.string().default(""),
-	S3_SECRET_KEY: zod.string().default(""),
-	S3_REGION: zod.string().default(""),
-	UPLOADTHING_TOKEN: zod.string().default(""),
-	NEXT_PUBLIC_SERVER_URL: zod.string().default(""),
+	DATABASE_URI: zod.string().optional().default(""),
+	PAYLOAD_SECRET: zod.string().optional().default(""),
+	RESEND_API_KEY: zod.string().optional().default(""),
+	RESEND_FROM_EMAIL: zod.string().optional().default(""),
+	RESEND_FROM_NAME: zod.string().optional().default(""),
+	S3_BUCKET_NAME: zod.string().optional().default(""),
+	S3_ENDPOINT: zod.string().optional().default(""),
+	S3_ACCESS_KEY: zod.string().optional().default(""),
+	S3_SECRET_KEY: zod.string().optional().default(""),
+	S3_REGION: zod.string().optional().default(""),
+	UPLOADTHING_TOKEN: zod.string().optional().default(""),
+	NEXT_PUBLIC_SERVER_URL: zod.string().optional().default(""),
 });
 
 // pick a schema depending on environment
