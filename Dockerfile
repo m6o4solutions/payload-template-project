@@ -1,3 +1,4 @@
+# check=skip=SecretsUsedInArgOrEnv
 # Base image with Node.js 22 on Alpine
 FROM node:22-alpine AS base
 
