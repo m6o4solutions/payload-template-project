@@ -1,7 +1,5 @@
 import { withPayload } from "@payloadcms/next/withPayload";
 
-import { env } from "@/lib/env";
-
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
@@ -9,7 +7,7 @@ const nextConfig: NextConfig = {
 		qualities: [25, 50, 75, 100],
 		remotePatterns: [
 			(() => {
-				const url = new URL(env.NEXT_PUBLIC_SERVER_URL);
+				const url = new URL(process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:3000");
 
 				return {
 					protocol: url.protocol.replace(":", "") as "http" | "https",
