@@ -5,9 +5,6 @@ import { env } from "@/lib/env";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-	turbopack: {
-		resolveExtensions: [".mdx", ".tsx", ".ts", ".jsx", ".js", ".mjs", ".json"],
-	},
 	images: {
 		qualities: [25, 50, 75, 100],
 		remotePatterns: [
@@ -21,6 +18,10 @@ const nextConfig: NextConfig = {
 				};
 			})(),
 		],
+	},
+	output: "standalone",
+	turbopack: {
+		resolveExtensions: [".mdx", ".tsx", ".ts", ".jsx", ".js", ".mjs", ".json"],
 	},
 };
 
