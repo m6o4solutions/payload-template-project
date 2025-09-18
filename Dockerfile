@@ -1,3 +1,4 @@
+# check=skip=SecretsUsedInArgOrEnv
 # Base image with Node.js 22 on Alpine
 FROM node:22-alpine AS base
 
@@ -27,6 +28,27 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 
 COPY . .
+
+# Provide dummy envs so Next.js doesn't crash during build
+ENV DATABASE_URI="dummy"
+ENV PAYLOAD_SECRET="dummy"
+ENV RESEND_API_KEY="dummy"
+ENV RESEND_FROM_EMAIL="noreply@updates.m6o4solutions.com"
+ENV RESEND_FROM_NAME="Mailer @ M6O4 Solutions"
+ENV S3_BUCKET_NAME="dummy"
+ENV S3_ENDPOINT="dummy"
+ENV S3_ACCESS_KEY="dummy"
+ENV S3_SECRET_KEY="dummy"
+ENV S3_REGION="dummy"
+ENV UPLOADTHING_TOKEN="dummy"
+ENV NEXT_PUBLIC_SERVER_URL="http://localhost:3000"
+ENV NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY="dummy"
+ENV CLERK_SECRET_KEY="dummy"
+ENV NEXT_PUBLIC_CLERK_SIGN_IN_URL="/sign-in"
+ENV NEXT_PUBLIC_CLERK_SIGN_UP_URL="/sign-up"
+ENV NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL="/"
+ENV NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL="/"
+ENV CLERK_WEBHOOK_SIGNING_SECRET="dummy"
 
 # Build Next.js app
 RUN corepack enable pnpm && pnpm run build
