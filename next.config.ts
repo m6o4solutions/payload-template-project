@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
 		resolveExtensions: [".mdx", ".tsx", ".ts", ".jsx", ".js", ".mjs", ".json"],
 	},
 	images: {
+		qualities: [25, 50, 75, 100],
 		remotePatterns: [
 			(() => {
 				const url = new URL(env.NEXT_PUBLIC_SERVER_URL);
