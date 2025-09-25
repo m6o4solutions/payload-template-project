@@ -8,8 +8,10 @@ import { buildConfig } from "payload";
 import path from "path";
 import { fileURLToPath } from "url";
 
-import { Users } from "@/payload/collections/Users";
 import { Media } from "@/payload/collections/Media";
+import { Users } from "@/payload/collections/Users";
+
+import { resend } from "@/payload/fields/resend";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -29,6 +31,7 @@ export default buildConfig({
 		url: process.env.DATABASE_URI || "",
 	}),
 	editor: lexicalEditor(),
+	email: resend,
 	globals: [],
 	plugins: [payloadCloudPlugin()],
 	secret: process.env.PAYLOAD_SECRET || "",
