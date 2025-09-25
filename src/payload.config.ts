@@ -7,8 +7,8 @@ import { buildConfig } from "payload";
 import path from "path";
 import { fileURLToPath } from "url";
 
-import { Media } from "@/payload/collections/Media";
-import { Users } from "@/payload/collections/Users";
+import { collections } from "@/payload/collections";
+import { Users } from "@/payload/collections/users/schema";
 
 import { lexical } from "@/payload/fields/lexical";
 import { resend } from "@/payload/fields/resend";
@@ -26,7 +26,7 @@ export default buildConfig({
 		},
 		user: Users.slug,
 	},
-	collections: [Users, Media],
+	collections: collections,
 	db: mongooseAdapter({
 		url: process.env.DATABASE_URI || "",
 	}),
