@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/m6o4solutions/payload-basic-template-project/compare/v1.2.1...v1.2.2) (2025-09-25)
+
+
+### Bug Fixes
+
+* match domain to what Next.js sees in next.config.mjs ([#10](https://github.com/m6o4solutions/payload-basic-template-project/issues/10)) ([b2aa32f](https://github.com/m6o4solutions/payload-basic-template-project/commit/b2aa32f338c421c0723e35c01c98f261f36bdb34))
+
 ## [1.2.2-rc.1](https://github.com/m6o4solutions/payload-basic-template-project/compare/v1.2.1...v1.2.2-rc.1) (2025-09-25)
 
 
