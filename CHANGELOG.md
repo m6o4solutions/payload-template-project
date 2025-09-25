@@ -1,3 +1,16 @@
+# [1.3.0-dev.1](https://github.com/m6o4solutions/payload-basic-template-project/compare/v1.2.0...v1.3.0-dev.1) (2025-09-25)
+
+
+### Bug Fixes
+
+* allow images from specific external paths and block all others ([#8](https://github.com/m6o4solutions/payload-basic-template-project/issues/8)) ([7ffc7f5](https://github.com/m6o4solutions/payload-basic-template-project/commit/7ffc7f5407bc1bc20519ffac8d0fbe19ee4cdcfe))
+* match domain to what Next.js sees in next.config.mjs ([6a591cf](https://github.com/m6o4solutions/payload-basic-template-project/commit/6a591cfe9defa3862fb27d448f1e7b33a9853f6d))
+
+
+### Features
+
+* create categories collection ([fd40071](https://github.com/m6o4solutions/payload-basic-template-project/commit/fd4007129cab680feab99d468770151ef38abc55))
+
 ## [1.2.1-rc.1](https://github.com/m6o4solutions/payload-basic-template-project/compare/v1.2.0...v1.2.1-rc.1) (2025-09-25)
 
 
