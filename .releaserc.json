@@ -2,8 +2,12 @@
 	"branches": [
 		"main",
 		{
-			"name": "development",
+			"name": "staging",
 			"prerelease": "rc"
+		},
+		{
+			"name": "development",
+			"prerelease": "dev"
 		}
 	],
 	"plugins": [
