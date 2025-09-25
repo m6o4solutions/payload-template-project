@@ -1,19 +1,52 @@
-import React from 'react'
-import './styles.css'
+import React, { ReactNode } from "react";
+import { Geist } from "next/font/google";
 
-export const metadata = {
-  description: 'A blank template using Payload in a Next.js app.',
-  title: 'Payload Blank Template',
-}
+import { cn } from "@/lib/utils";
 
-export default async function RootLayout(props: { children: React.ReactNode }) {
-  const { children } = props
+import { ThemeProvider } from "@/components/theme-provider";
 
-  return (
-    <html lang="en">
-      <body>
-        <main>{children}</main>
-      </body>
-    </html>
-  )
-}
+import { FooterServer as Footer } from "@/payload/blocks/globals/footer/server";
+import { HeaderServer as Header } from "@/payload/blocks/globals/header/server";
+
+import type { Metadata } from "next";
+
+import "@/styles/globals.css";
+
+export const metadata: Metadata = {
+	title: "Payload Basic Template",
+	description: "Template to get started with Next.js, Payload 3.0 CMS and Tailwind CSS.",
+};
+
+const geist = Geist({ subsets: ["latin"] });
+
+const RootLayout = async (props: { children: ReactNode }) => {
+	const { children } = props;
+
+	return (
+		<html lang="en" suppressHydrationWarning>
+			<head>
+				<link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+			</head>
+			<body className={cn("flex h-screen flex-col", geist.className)}>
+				<ThemeProvider
+					attribute="class"
+					defaultTheme="system"
+					enableSystem
+					disableTransitionOnChange
+				>
+					<header>
+						<Header />
+					</header>
+
+					<main>{children}</main>
+
+					<footer className="mt-auto">
+						<Footer />
+					</footer>
+				</ThemeProvider>
+			</body>
+		</html>
+	);
+};
+
+export default RootLayout;
