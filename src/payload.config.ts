@@ -2,7 +2,6 @@ import sharp from "sharp";
 
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { payloadCloudPlugin } from "@payloadcms/payload-cloud";
-import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { buildConfig } from "payload";
 
 import path from "path";
@@ -11,6 +10,7 @@ import { fileURLToPath } from "url";
 import { Media } from "@/payload/collections/Media";
 import { Users } from "@/payload/collections/Users";
 
+import { lexical } from "@/payload/fields/lexical";
 import { resend } from "@/payload/fields/resend";
 
 const filename = fileURLToPath(import.meta.url);
@@ -30,7 +30,7 @@ export default buildConfig({
 	db: mongooseAdapter({
 		url: process.env.DATABASE_URI || "",
 	}),
-	editor: lexicalEditor(),
+	editor: lexical,
 	email: resend,
 	globals: [],
 	plugins: [payloadCloudPlugin()],
