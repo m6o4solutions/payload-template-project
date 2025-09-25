@@ -2,12 +2,8 @@
 	"branches": [
 		"main",
 		{
-			"name": "staging",
-			"prerelease": true
-		},
-		{
 			"name": "development",
-			"prerelease": true
+			"prerelease": "rc"
 		}
 	],
 	"plugins": [

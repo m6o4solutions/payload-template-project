@@ -1,9 +1,23 @@
-# [1.1.0](https://github.com/m6o4solutions/payload-basic-template-project/compare/v1.0.0...v1.1.0) (2025-09-25)
+# [1.2.0-rc.1](https://github.com/m6o4solutions/payload-basic-template-project/compare/v1.1.0...v1.2.0-rc.1) (2025-09-25)
 
 
 ### Features
 
+* add access control functions for user authentication ([70e29c6](https://github.com/m6o4solutions/payload-basic-template-project/commit/70e29c67d8819036083a7a4fbc286f71757ca8cf))
+* add name and photo fields to User interface and schema ([ca1875c](https://github.com/m6o4solutions/payload-basic-template-project/commit/ca1875c85137a981b5922f65a6213b8c828156dc))
+* enhance media schema with caption and size options ([b1d6305](https://github.com/m6o4solutions/payload-basic-template-project/commit/b1d6305c8c7107f1f28cbc9c12dfa64f472fc222))
+* integrate Uploadthing storage plugin and enhance media schema ([6508380](https://github.com/m6o4solutions/payload-basic-template-project/commit/6508380744f9fd20639f2c956c4b821499b6fc43))
+
+# [1.1.0-rc.1](https://github.com/m6o4solutions/payload-basic-template-project/compare/v1.0.0...v1.1.0-rc.1) (2025-09-25)
+
+
+### Features
+
+* add access control functions for user authentication ([70e29c6](https://github.com/m6o4solutions/payload-basic-template-project/commit/70e29c67d8819036083a7a4fbc286f71757ca8cf))
+* add name and photo fields to User interface and schema ([ca1875c](https://github.com/m6o4solutions/payload-basic-template-project/commit/ca1875c85137a981b5922f65a6213b8c828156dc))
+* enhance media schema with caption and size options ([b1d6305](https://github.com/m6o4solutions/payload-basic-template-project/commit/b1d6305c8c7107f1f28cbc9c12dfa64f472fc222))
 * enhance template with new components and improve layout structure ([#5](https://github.com/m6o4solutions/payload-basic-template-project/issues/5)) ([9716d29](https://github.com/m6o4solutions/payload-basic-template-project/commit/9716d2958144dc31465851cfd92f6634cd923c17))
+* integrate Uploadthing storage plugin and enhance media schema ([6508380](https://github.com/m6o4solutions/payload-basic-template-project/commit/6508380744f9fd20639f2c956c4b821499b6fc43))
 
 # [1.1.0-development.1](https://github.com/m6o4solutions/payload-basic-template-project/compare/v1.0.0...v1.1.0-development.1) (2025-09-25)
 
