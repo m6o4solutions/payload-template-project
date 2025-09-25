@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/m6o4solutions/payload-basic-template-project/compare/v1.0.0...v1.1.0) (2025-09-25)
+
+
+### Features
+
+* enhance template with new components and improve layout structure ([#5](https://github.com/m6o4solutions/payload-basic-template-project/issues/5)) ([9716d29](https://github.com/m6o4solutions/payload-basic-template-project/commit/9716d2958144dc31465851cfd92f6634cd923c17))
+
 # [1.1.0-development.1](https://github.com/m6o4solutions/payload-basic-template-project/compare/v1.0.0...v1.1.0-development.1) (2025-09-25)
 
 
