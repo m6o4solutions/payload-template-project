@@ -3,11 +3,10 @@ import { withPayload } from "@payloadcms/next/withPayload";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	images: {
-		qualities: [25, 50, 75, 100],
 		remotePatterns: [
 			{
 				protocol: "https",
-				hostname: new URL(process.env.NEXT_PUBLIC_SERVER_URL).hostname,
+				hostname: "payload-basic-template.m6o4solutions.com",
 			},
 			{
 				protocol: "http",
