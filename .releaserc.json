@@ -3,11 +3,11 @@
 		"main",
 		{
 			"name": "staging",
-			"prerelease": true
+			"prerelease": "rc"
 		},
 		{
 			"name": "development",
-			"prerelease": true
+			"prerelease": "dev"
 		}
 	],
 	"plugins": [
