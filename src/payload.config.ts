@@ -8,8 +8,8 @@ import { buildConfig } from "payload";
 import path from "path";
 import { fileURLToPath } from "url";
 
-import { Users } from "./collections/Users";
-import { Media } from "./collections/Media";
+import { Users } from "./payload/collections/Users";
+import { Media } from "./payload/collections/Media";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
