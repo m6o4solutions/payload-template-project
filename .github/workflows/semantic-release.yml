@@ -1,0 +1,38 @@
+name: Automatic Semantic Release
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write # allow semantic-release to push commits & tags
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # required for semantic-release to read commit history
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm # enables caching for pnpm dependencies
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10 # or your preferred pnpm version
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run Semantic Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+        run: pnpm dlx semantic-release
