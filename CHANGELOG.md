@@ -1,4 +1,16 @@
-# [1.2.0](https://github.com/m6o4solutions/payload-basic-template-project/compare/v1.1.0...v1.2.0) (2025-09-25)
+## [1.2.1-rc.1](https://github.com/m6o4solutions/payload-basic-template-project/compare/v1.2.0...v1.2.1-rc.1) (2025-09-25)
+
+
+### Bug Fixes
+
+* allow images from specific external paths and block all others ([#8](https://github.com/m6o4solutions/payload-basic-template-project/issues/8)) ([7ffc7f5](https://github.com/m6o4solutions/payload-basic-template-project/commit/7ffc7f5407bc1bc20519ffac8d0fbe19ee4cdcfe))
+
+# [1.2.0-dev.1](https://github.com/m6o4solutions/payload-basic-template-project/compare/v1.1.0...v1.2.0-dev.1) (2025-09-25)
+
+### Bug Fixes
+
+* allow images from specific external paths and block all others ([2bc803f](https://github.com/m6o4solutions/payload-basic-template-project/commit/2bc803f7f7ef42d49f6f0c956e80bf4d8892fbc6))
+
 
 
 ### Features
