@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { Montserrat } from "next/font/google";
+import { Geist } from "next/font/google";
 
 import { cn } from "@/lib/utils";
 
@@ -17,14 +17,17 @@ export const metadata: Metadata = {
 	description: "Template to get started with Next.js, Payload 3.0 CMS and Tailwind CSS.",
 };
 
-const montserrat = Montserrat({ subsets: ["latin"] });
+const geist = Geist({ subsets: ["latin"] });
 
 const RootLayout = async (props: { children: ReactNode }) => {
 	const { children } = props;
 
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<body className={cn("flex h-screen flex-col", montserrat.className)}>
+			<head>
+				<link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+			</head>
+			<body className={cn("flex h-screen flex-col", geist.className)}>
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="system"

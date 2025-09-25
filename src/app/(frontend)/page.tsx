@@ -8,7 +8,7 @@ const HomePage = async () => {
 		<Container>
 			<article>
 				<section className="pt-36 pb-36">
-					<h1 className="font-header text-4xl font-bold tracking-wide text-sky-800">
+					<h1 className="text-4xl font-bold tracking-wide text-sky-800">
 						Payload Basic Template
 					</h1>
 
