@@ -1,3 +1,4 @@
+
 # [1.1.0-rc.1](https://github.com/m6o4solutions/payload-basic-template-project/compare/v1.0.0...v1.1.0-rc.1) (2025-09-25)
 
 
