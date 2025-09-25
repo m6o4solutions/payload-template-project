@@ -3,9 +3,6 @@ import sharp from "sharp";
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { buildConfig } from "payload";
 
-import { payloadCloudPlugin } from "@payloadcms/payload-cloud";
-import { plugins } from "@/payload/plugins/schema";
-
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -14,6 +11,8 @@ import { Users } from "@/payload/collections/users/schema";
 
 import { lexical } from "@/payload/fields/lexical";
 import { resend } from "@/payload/fields/resend";
+
+import { plugins } from "@/payload/plugins/schema";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -35,7 +34,7 @@ export default buildConfig({
 	editor: lexical,
 	email: resend,
 	globals: [],
-	plugins: [payloadCloudPlugin(), ...plugins],
+	plugins: [...plugins],
 	secret: process.env.PAYLOAD_SECRET || "",
 	sharp,
 	typescript: {
