@@ -1,8 +1,10 @@
 import sharp from "sharp";
 
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
-import { payloadCloudPlugin } from "@payloadcms/payload-cloud";
 import { buildConfig } from "payload";
+
+import { payloadCloudPlugin } from "@payloadcms/payload-cloud";
+import { plugins } from "@/payload/plugins/schema";
 
 import path from "path";
 import { fileURLToPath } from "url";
@@ -33,7 +35,7 @@ export default buildConfig({
 	editor: lexical,
 	email: resend,
 	globals: [],
-	plugins: [payloadCloudPlugin()],
+	plugins: [payloadCloudPlugin(), ...plugins],
 	secret: process.env.PAYLOAD_SECRET || "",
 	sharp,
 	typescript: {

@@ -1,3 +1,9 @@
+import {
+	FixedToolbarFeature,
+	InlineToolbarFeature,
+	lexicalEditor,
+} from "@payloadcms/richtext-lexical";
+
 import type { CollectionConfig } from "payload";
 
 const Media: CollectionConfig = {
