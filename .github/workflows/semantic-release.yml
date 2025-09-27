@@ -5,9 +5,7 @@ on:
     branches:
       - main
       - staging
-  
-  workflow_dispatch:
-
+      
 permissions:
   contents: write
 
@@ -39,31 +37,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
         run: pnpm dlx semantic-release
-
-  dry-run:
-    if: github.event_name == 'workflow_dispatch'
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 10
-
-      - name: Install Dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Run Semantic Release (Dry Run)
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
-        run: pnpm dlx semantic-release --dry-run
