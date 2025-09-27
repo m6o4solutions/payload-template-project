@@ -5,7 +5,7 @@ on:
     branches:
       - main
       - staging
-      - development
+  
   workflow_dispatch:
 
 permissions:
