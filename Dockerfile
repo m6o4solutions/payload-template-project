@@ -33,6 +33,7 @@ COPY . .
 # Provide placeholder envs so Next.js doesn't crash during build
 ENV DATABASE_URI="placeholder"
 ENV PAYLOAD_SECRET="placeholder"
+ENV PREVIEW_SECRET="placeholder"
 ENV RESEND_API_KEY="placeholder"
 ENV RESEND_FROM_EMAIL="placeholder@email.com"
 ENV RESEND_FROM_NAME="placeholder"

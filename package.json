@@ -1,5 +1,5 @@
 {
-	"name": "payload-basic-template",
+	"name": "payload-template",
 	"version": "1.0.0",
 	"description": "Template to get started with Next.js, Payload 3.0, MongoDb and Tailwind CSS",
 	"license": "MIT",
