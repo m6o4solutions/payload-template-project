@@ -4,10 +4,6 @@
 		{
 			"name": "staging",
 			"prerelease": "rc"
-		},
-		{
-			"name": "development",
-			"prerelease": "dev"
 		}
 	],
 	"plugins": [
