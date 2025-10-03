@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.2.2...v1.3.0) (2025-10-03)
+
+
+### Features
+
+* add s3 storage adapter and update dependencies ([b484e73](https://github.com/m6o4solutions/payload-template-project/commit/b484e736b686957266d5adb24bb45e54a0283f4d))
+* implement live preview with next.js draft mode ([99df796](https://github.com/m6o4solutions/payload-template-project/commit/99df796d73afd5a53cf6f3c59536a7a2ace53666))
+
 # [1.3.0-dev.1](https://github.com/m6o4solutions/payload-basic-template-project/compare/v1.2.0...v1.3.0-dev.1) (2025-09-25)
 
 ### Bug Fixes
