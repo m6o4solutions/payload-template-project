@@ -15,8 +15,6 @@ import { Plugin } from "payload";
 import { beforeSyncWithSearch } from "@/payload/search/before-sync";
 import { searchFields } from "@/payload/search/field-overrides";
 
-import { Media } from "@/payload/collections/media/schema";
-
 // import { getServerSideURL } from "@/payload/utilities/get-url";
 
 // import { GenerateTitle, GenerateURL } from "@payloadcms/plugin-seo/types";
