@@ -5,14 +5,14 @@ import { cn } from "@/lib/utils";
 
 import { ThemeProvider } from "@/components/theme-provider";
 
-import { FooterServer as Footer } from "@/payload/blocks/globals/footer/server";
-import { HeaderServer as Header } from "@/payload/blocks/globals/header/server";
+import { FooterServer as Footer } from "@/payload/blocks/globals/footer/component";
+import { HeaderServer as Header } from "@/payload/blocks/globals/header/component";
 
 import type { Metadata } from "next";
 
 import "@/styles/globals.css";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
 	title: "Payload Basic Template",
 	description: "Template to get started with Next.js, Payload 3.0 CMS and Tailwind CSS.",
 };
@@ -49,4 +49,4 @@ const RootLayout = async (props: { children: ReactNode }) => {
 	);
 };
 
-export default RootLayout;
+export { RootLayout as default, metadata };
