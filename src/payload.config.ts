@@ -6,6 +6,7 @@ import { buildConfig } from "payload";
 import path from "path";
 import { fileURLToPath } from "url";
 
+import { globals } from "@/payload/blocks/globals";
 import { collections } from "@/payload/collections";
 import { Users } from "@/payload/collections/users/schema";
 
@@ -33,7 +34,7 @@ export default buildConfig({
 	}),
 	editor: lexical,
 	email: resend,
-	globals: [],
+	globals: globals,
 	plugins: [...plugins],
 	secret: process.env.PAYLOAD_SECRET || "",
 	sharp,
