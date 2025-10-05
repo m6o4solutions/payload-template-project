@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.3.0...v1.4.0) (2025-10-05)
+
+
+### Features
+
+* implement header/footer globals and component refactor ([9466fc2](https://github.com/m6o4solutions/payload-template-project/commit/9466fc2172cb2ec3f61c436293d57678310fbb64))
+
 # [1.3.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.2.2...v1.3.0) (2025-10-03)
 
 
