@@ -1,3 +1,13 @@
+# [1.5.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.4.0...v1.5.0) (2025-10-07)
+
+
+### Features
+
+* add accordion, card, and button components ([74d1ba1](https://github.com/m6o4solutions/payload-template-project/commit/74d1ba1ee12c46e64b2b5b83494eb7adb98e0980))
+* add comprehensive set of utility functions ([776bd07](https://github.com/m6o4solutions/payload-template-project/commit/776bd073d5b83645fd6a8b6fce9ed77fbb15ad21))
+* add live preview and media components ([5346e71](https://github.com/m6o4solutions/payload-template-project/commit/5346e7152ddb8b5782ce54c88bfcf84e4f737a49))
+* Add reusable link and enhanced slug fields ([a1b3ffe](https://github.com/m6o4solutions/payload-template-project/commit/a1b3ffef6ce8c250f06d8db561f9410d94fab7e9))
+
 # [1.4.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.3.0...v1.4.0) (2025-10-05)
 
 
