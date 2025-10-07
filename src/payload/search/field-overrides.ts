@@ -1,5 +1,8 @@
-import { Field } from "payload";
+import type { Field } from "payload";
 
+/**
+ * defines the custom fields used to store document metadata within the payload search index.
+ */
 const searchFields: Field[] = [
 	{
 		name: "slug",
