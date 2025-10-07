@@ -33,7 +33,9 @@ import { searchFields } from "@/payload/search/field-overrides";
 const plugins: Plugin[] = [
 	formBuilderPlugin({
 		fields: {
+			country: false,
 			payment: false,
+			state: false,
 		},
 		formOverrides: {
 			fields: ({ defaultFields }) => {
