@@ -51,7 +51,7 @@ const Users: CollectionConfig = {
 		{
 			name: "name",
 			type: "text",
-			label: "Full Name",
+			label: "Name",
 			admin: {
 				position: "sidebar",
 				hidden: true,

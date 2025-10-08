@@ -3,7 +3,6 @@ import {
 	HeadingFeature,
 	lexicalEditor,
 } from "@payloadcms/richtext-lexical";
-
 import { payloadCloudPlugin } from "@payloadcms/payload-cloud";
 import { s3Storage } from "@payloadcms/storage-s3";
 import { formBuilderPlugin } from "@payloadcms/plugin-form-builder";
@@ -21,6 +20,7 @@ import { getServerSideURL } from "@/payload/utilities/get-url";
 import { revalidateRedirects } from "@/payload/hooks/revalidate-redirects";
 
 import { GenerateTitle, GenerateURL } from "@payloadcms/plugin-seo/types";
+
 import { Page, Post } from "@/payload-types";
 
 const generateTitle: GenerateTitle<Post | Page> = ({ doc }) => {
