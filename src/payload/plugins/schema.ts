@@ -5,30 +5,33 @@ import {
 } from "@payloadcms/richtext-lexical";
 
 import { payloadCloudPlugin } from "@payloadcms/payload-cloud";
-import { formBuilderPlugin } from "@payloadcms/plugin-form-builder";
-import { searchPlugin } from "@payloadcms/plugin-search";
-// import { seoPlugin } from "@payloadcms/plugin-seo";
 import { s3Storage } from "@payloadcms/storage-s3";
+import { formBuilderPlugin } from "@payloadcms/plugin-form-builder";
+import { redirectsPlugin } from "@payloadcms/plugin-redirects";
+import { searchPlugin } from "@payloadcms/plugin-search";
+import { seoPlugin } from "@payloadcms/plugin-seo";
 
 import { Plugin } from "payload";
 
 import { beforeSyncWithSearch } from "@/payload/search/before-sync";
 import { searchFields } from "@/payload/search/field-overrides";
 
-// import { getServerSideURL } from "@/payload/utilities/get-url";
+import { getServerSideURL } from "@/payload/utilities/get-url";
 
-// import { GenerateTitle, GenerateURL } from "@payloadcms/plugin-seo/types";
-// import { Page, Post } from "@/payload-types";
+import { revalidateRedirects } from "@/payload/hooks/revalidate-redirects";
 
-// const generateTitle: GenerateTitle<Post | Page> = ({ doc }) => {
-// 	return doc?.title ? `${doc.title} | Payload Basic Template` : "Payload Basic Template";
-// };
+import { GenerateTitle, GenerateURL } from "@payloadcms/plugin-seo/types";
+import { Page, Post } from "@/payload-types";
 
-// const generateURL: GenerateURL<Post | Page> = ({ doc }) => {
-// 	const url = getServerSideURL();
+const generateTitle: GenerateTitle<Post | Page> = ({ doc }) => {
+	return doc?.title ? `${doc.title} | M6O4 Solutions` : "M6O4 Solutions";
+};
 
-// 	return doc?.slug ? `${url}/${doc.slug}` : url;
-// };
+const generateURL: GenerateURL<Post | Page> = ({ doc }) => {
+	const url = getServerSideURL();
+
+	return doc?.slug ? `${url}/${doc.slug}` : url;
+};
 
 const plugins: Plugin[] = [
 	formBuilderPlugin({
@@ -60,6 +63,29 @@ const plugins: Plugin[] = [
 		},
 	}),
 	payloadCloudPlugin(),
+	redirectsPlugin({
+		collections: ["pages", "posts"],
+		overrides: {
+			// @ts-expect-error - This is a valid override, mapped fields don't resolve to the same type
+			fields: ({ defaultFields }) => {
+				return defaultFields.map((field) => {
+					if ("name" in field && field.name === "from") {
+						return {
+							...field,
+							admin: {
+								description:
+									"You will need to rebuild the website when changing this field.",
+							},
+						};
+					}
+					return field;
+				});
+			},
+			hooks: {
+				afterChange: [revalidateRedirects],
+			},
+		},
+	}),
 	s3Storage({
 		collections: {
 			media: true,
@@ -84,7 +110,7 @@ const plugins: Plugin[] = [
 			},
 		},
 	}),
-	// seoPlugin({ generateTitle, generateURL }),
+	seoPlugin({ generateTitle, generateURL }),
 ];
 
 export { plugins };

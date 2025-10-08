@@ -1,7 +1,7 @@
 {
 	"name": "payload-template",
 	"version": "1.0.0",
-	"description": "Template to get started with Next.js, Payload 3.0, MongoDB, Tailwind CSS and MinIO for object storage.",
+	"description": "Template to get started with Next.js, Payload 3.0, MongoDB and Tailwind CSS.",
 	"license": "MIT",
 	"type": "module",
 	"scripts": {
@@ -21,6 +21,7 @@
 		"@payloadcms/next": "^3.59.1",
 		"@payloadcms/payload-cloud": "^3.59.1",
 		"@payloadcms/plugin-form-builder": "^3.59.1",
+		"@payloadcms/plugin-redirects": "^3.59.1",
 		"@payloadcms/plugin-search": "^3.59.1",
 		"@payloadcms/plugin-seo": "^3.59.1",
 		"@payloadcms/richtext-lexical": "^3.59.1",
@@ -42,6 +43,7 @@
 		"next-themes": "^0.4.6",
 		"payload": "^3.59.1",
 		"postcss": "^8.5.6",
+		"prism-react-renderer": "^2.4.1",
 		"react": "^19.2.0",
 		"react-dom": "^19.2.0",
 		"sharp": "^0.34.4",

@@ -5,14 +5,14 @@ import type { Metadata } from "next";
 const defaultOpenGraph: Metadata["openGraph"] = {
 	type: "website",
 	description:
-		"Way Finding Coaching helps growth-minded people overcome conflict and gain clarity through personalized coaching.",
+		"Template to get started with Next.js, Payload 3.0, MongoDB and Tailwind CSS.",
 	images: [
 		{
-			url: `${getServerSideURL()}/way-finding-og.webp`,
+			url: `${getServerSideURL()}/abstract-image-1.jpg`,
 		},
 	],
-	siteName: "Way Finding Coaching",
-	title: "Way Finding Coaching",
+	siteName: "M6O4 Solutions",
+	title: "M6O4 Solutions",
 };
 
 /**
