@@ -20,6 +20,9 @@ const dirname = path.dirname(filename);
 
 export default buildConfig({
 	admin: {
+		components: {
+			graphics: {},
+		},
 		importMap: {
 			baseDir: path.resolve(dirname),
 		},
