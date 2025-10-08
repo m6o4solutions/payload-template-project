@@ -358,7 +358,7 @@ export interface User {
   id: string;
   firstName: string;
   lastName: string;
-  fullName?: string | null;
+  name?: string | null;
   photo?: (string | null) | Media;
   updatedAt: string;
   createdAt: string;
@@ -971,7 +971,7 @@ export interface MediaSelect<T extends boolean = true> {
 export interface UsersSelect<T extends boolean = true> {
   firstName?: T;
   lastName?: T;
-  fullName?: T;
+  name?: T;
   photo?: T;
   updatedAt?: T;
   createdAt?: T;

@@ -16,8 +16,8 @@ const Users: CollectionConfig = {
 		update: isAuthenticated,
 	},
 	admin: {
-		defaultColumns: ["fullName", "photo", "email", "createdAt", "updatedAt"],
-		useAsTitle: "fullName",
+		defaultColumns: ["name", "photo", "email", "createdAt", "updatedAt"],
+		useAsTitle: "name",
 	},
 	labels: {
 		singular: "User",
@@ -49,7 +49,7 @@ const Users: CollectionConfig = {
 			],
 		},
 		{
-			name: "fullName",
+			name: "name",
 			type: "text",
 			label: "Full Name",
 			admin: {
