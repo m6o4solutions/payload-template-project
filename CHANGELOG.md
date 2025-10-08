@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.6.0...v1.7.0) (2025-10-08)
+
+
+### Features
+
+* Add CRON_SECRET to example environment ([9032308](https://github.com/m6o4solutions/payload-template-project/commit/9032308e7070223f566601320d84cb9a83bf1088))
+
 # [1.6.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.5.0...v1.6.0) (2025-10-08)
 
 
