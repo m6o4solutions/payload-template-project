@@ -1,3 +1,11 @@
+# [1.6.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.5.0...v1.6.0) (2025-10-08)
+
+
+### Features
+
+* Implement pages, posts, and block editor ([60d0830](https://github.com/m6o4solutions/payload-template-project/commit/60d0830dbb331f48737e7e8a62d09e157f0b7589))
+* Replace name field with separate first and last name fields ([89bddb0](https://github.com/m6o4solutions/payload-template-project/commit/89bddb08db1cf320c6bf222c0dbb6cb03a2c67b7))
+
 # [1.5.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.4.0...v1.5.0) (2025-10-07)
 
 
