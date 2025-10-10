@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.7.0...v1.8.0) (2025-10-10)
+
+
+### Features
+
+* White label Payload CMS with S3 logo ([93697d7](https://github.com/m6o4solutions/payload-template-project/commit/93697d701ef71492a648c3b3fd5ca33d113b2493))
+
 # [1.7.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.6.0...v1.7.0) (2025-10-08)
 
 
