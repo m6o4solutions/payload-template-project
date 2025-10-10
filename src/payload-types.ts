@@ -103,10 +103,12 @@ export interface Config {
   globals: {
     header: Header;
     footer: Footer;
+    branding: Branding;
   };
   globalsSelect: {
     header: HeaderSelect<false> | HeaderSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
+    branding: BrandingSelect<false> | BrandingSelect<true>;
   };
   locale: null;
   user: User & {
@@ -1245,6 +1247,17 @@ export interface Footer {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "branding".
+ */
+export interface Branding {
+  id: string;
+  organizationIcon: string | Media;
+  organizationLogo: string | Media;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "header_select".
  */
 export interface HeaderSelect<T extends boolean = true> {
@@ -1257,6 +1270,17 @@ export interface HeaderSelect<T extends boolean = true> {
  * via the `definition` "footer_select".
  */
 export interface FooterSelect<T extends boolean = true> {
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "branding_select".
+ */
+export interface BrandingSelect<T extends boolean = true> {
+  organizationIcon?: T;
+  organizationLogo?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
