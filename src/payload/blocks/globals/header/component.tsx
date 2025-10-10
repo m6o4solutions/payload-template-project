@@ -1,6 +1,6 @@
 import { Container } from "@/components/container";
 
-const HeaderServer = () => {
+const Header = () => {
 	return (
 		<Container>
 			<div>The Header Goes Here</div>
@@ -8,4 +8,4 @@ const HeaderServer = () => {
 	);
 };
 
-export { HeaderServer };
+export { Header };

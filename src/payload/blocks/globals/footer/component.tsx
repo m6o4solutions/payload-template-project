@@ -1,6 +1,6 @@
 import { Container } from "@/components/container";
 
-const FooterServer = () => {
+const Footer = () => {
 	return (
 		<Container>
 			<div>The Footer Goes Here</div>
@@ -8,4 +8,4 @@ const FooterServer = () => {
 	);
 };
 
-export { FooterServer };
+export { Footer };
