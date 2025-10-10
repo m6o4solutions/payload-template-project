@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.8.0...v1.9.0) (2025-10-10)
+
+
+### Features
+
+* Wired up the mechanics to work with Payload. ([34ea637](https://github.com/m6o4solutions/payload-template-project/commit/34ea6376454ea516a429e10ccf19eb7be1e8572a))
+
 # [1.8.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.7.0...v1.8.0) (2025-10-10)
 
 
