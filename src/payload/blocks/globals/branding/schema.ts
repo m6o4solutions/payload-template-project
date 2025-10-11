@@ -17,7 +17,6 @@ const Branding: GlobalConfig = {
 					name: "organizationLogo",
 					label: "Organization Logo",
 					type: "upload",
-					required: true,
 					relationTo: "media",
 				},
 			],

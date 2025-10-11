@@ -1252,7 +1252,7 @@ export interface Footer {
 export interface Branding {
   id: string;
   organizationIcon: string | Media;
-  organizationLogo: string | Media;
+  organizationLogo?: (string | null) | Media;
   updatedAt?: string | null;
   createdAt?: string | null;
 }

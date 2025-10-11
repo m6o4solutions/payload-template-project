@@ -17,7 +17,6 @@ import { plugins } from "@/payload/plugins/schema";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
-
 const iconURL = `${process.env.NEXT_PUBLIC_SERVER_URL}/api/media/file/${process.env.NEXT_PUBLIC_META_ICON}`;
 
 export default buildConfig({
