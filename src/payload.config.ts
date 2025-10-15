@@ -1,7 +1,7 @@
 import sharp from "sharp";
 
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
-import { buildConfig } from "payload";
+import { buildConfig, PayloadRequest } from "payload";
 
 import path from "path";
 import { fileURLToPath } from "url";
@@ -45,16 +45,27 @@ export default buildConfig({
 		user: Users.slug,
 	},
 	collections: collections,
-	db: mongooseAdapter({
-		url: process.env.DATABASE_URI!,
-	}),
+	db: mongooseAdapter({ url: process.env.DATABASE_URI! }),
 	editor: lexical,
 	email: resend,
 	globals: globals,
 	plugins: [...plugins],
 	secret: process.env.PAYLOAD_SECRET!,
 	sharp,
-	typescript: {
-		outputFile: path.resolve(dirname, "payload-types.ts"),
+	typescript: { outputFile: path.resolve(dirname, "payload-types.ts") },
+	jobs: {
+		access: {
+			run: ({ req }: { req: PayloadRequest }): boolean => {
+				// allow logged in users to execute this endpoint (default)
+				if (req.user) return true;
+
+				// if there is no logged in user, then check for the vercel
+				// cron secret to be present as an authorization header:
+				const authHeader = req.headers.get("authorization");
+
+				return authHeader === `Bearer ${process.env.CRON_SECRET}`;
+			},
+		},
+		tasks: [],
 	},
 });
