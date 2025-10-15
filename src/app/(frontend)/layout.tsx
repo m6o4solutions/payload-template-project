@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { Geist } from "next/font/google";
+import { Inter } from "next/font/google";
 
 import { cn } from "@/lib/utils";
 
@@ -17,7 +17,7 @@ import type { Metadata } from "next";
 import "@/styles/globals.css";
 
 // load the 'geist' font with the 'latin' subset
-const geist = Geist({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 // /**
 //  * @component rootlayout
@@ -36,7 +36,7 @@ const RootLayout = async (props: { children: ReactNode }) => {
 	return (
 		<html lang="en" suppressHydrationWarning>
 			{/* apply base styles and the geist font class to the body */}
-			<body className={cn("flex h-screen flex-col", geist.className)}>
+			<body className={cn("flex h-screen flex-col", inter.className)}>
 				{/* theme provider manages dark/light mode across the app */}
 				<ThemeProvider
 					attribute="class" // use 'class' to apply theme to the html element
