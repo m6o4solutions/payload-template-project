@@ -40,8 +40,8 @@ const generateMeta = async (args: {
 	const ogImage = getImageURL(doc?.meta?.image);
 
 	const title = doc?.meta?.title
-		? doc?.meta?.title + " | Way Finding Coaching"
-		: "Way Finding Coaching";
+		? doc?.meta?.title + " | M6O4 Solutions"
+		: "M6O4 Solutions";
 
 	return {
 		description: doc?.meta?.description,
