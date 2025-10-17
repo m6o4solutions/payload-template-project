@@ -15,7 +15,13 @@ const Icon = async () => {
 
 	return (
 		<>
-			<Image src={icon.url || ""} alt={icon.alt} width={32} height={32} priority />
+			<Image
+				src={icon?.url || ""}
+				alt={icon?.alt || "icon"}
+				width={32}
+				height={32}
+				priority
+			/>
 		</>
 	);
 };

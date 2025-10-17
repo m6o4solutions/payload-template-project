@@ -15,7 +15,13 @@ const Logo = async () => {
 
 	return (
 		<>
-			<Image src={logo.url || ""} alt={logo.alt} width={100} height={100} priority />
+			<Image
+				src={logo?.url || ""}
+				alt={logo?.alt || "logo"}
+				width={100}
+				height={100}
+				priority
+			/>
 		</>
 	);
 };
