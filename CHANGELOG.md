@@ -1,3 +1,16 @@
+# [1.10.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.9.0...v1.10.0) (2025-10-17)
+
+
+### Bug Fixes
+
+* rename application folder form frontend to web ([ed7a7a0](https://github.com/m6o4solutions/payload-template-project/commit/ed7a7a05aebfc6efe2268219bf6cf7bbc587f8de))
+
+
+### Features
+
+* change default font to Inter ([bfd8e69](https://github.com/m6o4solutions/payload-template-project/commit/bfd8e69bf6697c3f91c189cd30083cb9d27edecf))
+* install shadcn ui components ([e222259](https://github.com/m6o4solutions/payload-template-project/commit/e2222598f80afeab616c909b5f080c1c59723c7e))
+
 # [1.9.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.8.0...v1.9.0) (2025-10-10)
 
 
