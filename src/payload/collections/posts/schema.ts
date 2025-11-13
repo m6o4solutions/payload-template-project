@@ -1,3 +1,18 @@
+import { isAuthenticated, isAuthenticatedOrPublished } from "@/payload/access/access-control";
+import { Banner } from "@/payload/blocks/banner/schema";
+import { Code } from "@/payload/blocks/code/schema";
+import { Media } from "@/payload/blocks/media/schema";
+import { populateAuthors } from "@/payload/collections/posts/hooks/populate-authors";
+import { revalidateDelete, revalidatePost } from "@/payload/collections/posts/hooks/revalidate-post";
+import { slugField } from "@/payload/fields/slug";
+import { generatePreviewPath } from "@/payload/utilities/generate-preview-path";
+import {
+	MetaDescriptionField,
+	MetaImageField,
+	MetaTitleField,
+	OverviewField,
+	PreviewField,
+} from "@payloadcms/plugin-seo/fields";
 import {
 	BlocksFeature,
 	FixedToolbarFeature,
@@ -6,30 +21,6 @@ import {
 	InlineToolbarFeature,
 	lexicalEditor,
 } from "@payloadcms/richtext-lexical";
-import {
-	MetaDescriptionField,
-	MetaImageField,
-	MetaTitleField,
-	OverviewField,
-	PreviewField,
-} from "@payloadcms/plugin-seo/fields";
-
-import { Banner } from "@/payload/blocks/banner/schema";
-import { Code } from "@/payload/blocks/code/schema";
-import { Media } from "@/payload/blocks/media/schema";
-
-import { slugField } from "@/payload/fields/slug";
-import {
-	isAuthenticated,
-	isAuthenticatedOrPublished,
-} from "@/payload/access/access-control";
-import { generatePreviewPath } from "@/payload/utilities/generate-preview-path";
-import { populateAuthors } from "@/payload/collections/posts/hooks/populate-authors";
-import {
-	revalidateDelete,
-	revalidatePost,
-} from "@/payload/collections/posts/hooks/revalidate-post";
-
 import type { CollectionConfig } from "payload";
 
 /**
@@ -49,13 +40,11 @@ const Posts: CollectionConfig<"posts"> = {
 		title: true,
 		slug: true,
 		categories: true,
-		meta: {
-			image: true,
-			description: true,
-		},
+		meta: { image: true, description: true },
 	},
 	admin: {
 		defaultColumns: ["title", "slug", "createdAt", "updatedAt"],
+		group: "Content",
 		livePreview: {
 			url: ({ data, req }) => {
 				const path = generatePreviewPath({
@@ -75,27 +64,16 @@ const Posts: CollectionConfig<"posts"> = {
 			}),
 		useAsTitle: "title",
 	},
-	labels: {
-		singular: "Post",
-		plural: "Posts",
-	},
+	labels: { singular: "Post", plural: "Posts" },
 	fields: [
-		{
-			name: "title",
-			type: "text",
-			required: true,
-		},
+		{ name: "title", type: "text", required: true },
 		{
 			type: "tabs",
 			tabs: [
 				{
 					label: "Content",
 					fields: [
-						{
-							name: "heroImage",
-							type: "upload",
-							relationTo: "media",
-						},
+						{ name: "heroImage", type: "upload", relationTo: "media" },
 						{
 							name: "content",
 							type: "richText",
@@ -140,9 +118,7 @@ const Posts: CollectionConfig<"posts"> = {
 							type: "relationship",
 							hasMany: true,
 							relationTo: "categories",
-							admin: {
-								position: "sidebar",
-							},
+							admin: { position: "sidebar" },
 						},
 					],
 				},
@@ -199,30 +175,17 @@ const Posts: CollectionConfig<"posts"> = {
 			type: "relationship",
 			hasMany: true,
 			relationTo: "users",
-			admin: {
-				position: "sidebar",
-			},
+			admin: { position: "sidebar" },
 		},
 		// this field is only used to populate the user data via the `populateAuthors` hook
 		{
 			name: "populatedAuthors",
 			type: "array",
-			access: {
-				update: () => false,
-			},
-			admin: {
-				disabled: true,
-				readOnly: true,
-			},
+			access: { update: () => false },
+			admin: { disabled: true, readOnly: true },
 			fields: [
-				{
-					name: "id",
-					type: "text",
-				},
-				{
-					name: "name",
-					type: "text",
-				},
+				{ name: "id", type: "text" },
+				{ name: "name", type: "text" },
 			],
 		},
 	],
@@ -232,12 +195,7 @@ const Posts: CollectionConfig<"posts"> = {
 		afterDelete: [revalidateDelete],
 	},
 	versions: {
-		drafts: {
-			autosave: {
-				interval: 100,
-			},
-			schedulePublish: true,
-		},
+		drafts: { autosave: { interval: 100 }, schedulePublish: true },
 		maxPerDoc: 50,
 	},
 };

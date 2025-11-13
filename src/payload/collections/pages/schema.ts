@@ -1,3 +1,9 @@
+import { isAuthenticated, isAuthenticatedOrPublished } from "@/payload/access/access-control";
+import { Archive } from "@/payload/blocks/archive/schema";
+import { revalidateDelete, revalidatePage } from "@/payload/collections/pages/hooks/revalidate-page";
+import { slugField } from "@/payload/fields/slug";
+import { populatePublishedAt } from "@/payload/hooks/populate-published-at";
+import { generatePreviewPath } from "@/payload/utilities/generate-preview-path";
 import {
 	MetaDescriptionField,
 	MetaImageField,
@@ -5,21 +11,6 @@ import {
 	OverviewField,
 	PreviewField,
 } from "@payloadcms/plugin-seo/fields";
-
-import { Archive } from "@/payload/blocks/archive/schema";
-
-import { slugField } from "@/payload/fields/slug";
-import {
-	isAuthenticated,
-	isAuthenticatedOrPublished,
-} from "@/payload/access/access-control";
-import { generatePreviewPath } from "@/payload/utilities/generate-preview-path";
-import { populatePublishedAt } from "@/payload/hooks/populate-published-at";
-import {
-	revalidateDelete,
-	revalidatePage,
-} from "@/payload/collections/pages/hooks/revalidate-page";
-
 import type { CollectionConfig } from "payload";
 
 /**
@@ -41,6 +32,7 @@ const Pages: CollectionConfig<"pages"> = {
 	},
 	admin: {
 		defaultColumns: ["title", "slug", "createdAt", "updatedAt"],
+		group: "Content",
 		livePreview: {
 			url: ({ data, req }) => {
 				const path = generatePreviewPath({
@@ -60,16 +52,9 @@ const Pages: CollectionConfig<"pages"> = {
 			}),
 		useAsTitle: "title",
 	},
-	labels: {
-		singular: "Page",
-		plural: "Pages",
-	},
+	labels: { singular: "Page", plural: "Pages" },
 	fields: [
-		{
-			name: "title",
-			type: "text",
-			required: true,
-		},
+		{ name: "title", type: "text", required: true },
 		{
 			type: "tabs",
 			tabs: [
@@ -126,20 +111,8 @@ const Pages: CollectionConfig<"pages"> = {
 			},
 		},
 	],
-	hooks: {
-		afterChange: [revalidatePage],
-		beforeChange: [populatePublishedAt],
-		afterDelete: [revalidateDelete],
-	},
-	versions: {
-		drafts: {
-			autosave: {
-				interval: 100,
-			},
-			schedulePublish: true,
-		},
-		maxPerDoc: 50,
-	},
+	hooks: { afterChange: [revalidatePage], beforeChange: [populatePublishedAt], afterDelete: [revalidateDelete] },
+	versions: { drafts: { autosave: { interval: 100 }, schedulePublish: true }, maxPerDoc: 50 },
 };
 
 export { Pages };

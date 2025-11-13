@@ -394,9 +394,9 @@ export interface Form {
         | {
             name: string;
             label?: string | null;
-            width?: number | null;
+            width?: ('full' | '3/4' | '2/3' | '1/2' | '1/3' | '1/4') | null;
             required?: boolean | null;
-            defaultValue?: boolean | null;
+            hidden?: boolean | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'checkbox';
@@ -404,8 +404,10 @@ export interface Form {
         | {
             name: string;
             label?: string | null;
-            width?: number | null;
+            placeholder?: string | null;
+            width?: ('full' | '3/4' | '2/3' | '1/2' | '1/3' | '1/4') | null;
             required?: boolean | null;
+            hidden?: boolean | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'email';
@@ -443,27 +445,11 @@ export interface Form {
         | {
             name: string;
             label?: string | null;
-            width?: number | null;
-            defaultValue?: string | null;
             placeholder?: string | null;
-            options?:
-              | {
-                  label: string;
-                  value: string;
-                  id?: string | null;
-                }[]
-              | null;
-            required?: boolean | null;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'select';
-          }
-        | {
-            name: string;
-            label?: string | null;
-            width?: number | null;
             defaultValue?: string | null;
+            width?: ('full' | '3/4' | '2/3' | '1/2' | '1/3' | '1/4') | null;
             required?: boolean | null;
+            hidden?: boolean | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'text';
@@ -471,12 +457,24 @@ export interface Form {
         | {
             name: string;
             label?: string | null;
-            width?: number | null;
-            defaultValue?: string | null;
+            placeholder?: string | null;
             required?: boolean | null;
+            hidden?: boolean | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'textarea';
+          }
+        | {
+            name: string;
+            label?: string | null;
+            placeholder?: string | null;
+            defaultValue?: string | null;
+            width?: ('full' | '3/4' | '2/3' | '1/2' | '1/3' | '1/4') | null;
+            required?: boolean | null;
+            hidden?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'phone';
           }
       )[]
     | null;
@@ -501,7 +499,12 @@ export interface Form {
     [k: string]: unknown;
   } | null;
   redirect?: {
-    url: string;
+    type?: ('reference' | 'custom') | null;
+    reference?: {
+      relationTo: 'pages';
+      value: string | Page;
+    } | null;
+    url?: string | null;
   };
   /**
    * Send custom emails when the form submits. Use comma separated lists to send the same email to multiple recipients. To reference a value from this form, wrap that field's name with double curly brackets, i.e. {{firstName}}. You can use a wildcard {{*}} to output all data and {{*:table}} to format it as an HTML table in the email.
@@ -535,6 +538,7 @@ export interface Form {
         id?: string | null;
       }[]
     | null;
+  requireRecaptcha?: boolean | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -1023,7 +1027,7 @@ export interface FormsSelect<T extends boolean = true> {
               label?: T;
               width?: T;
               required?: T;
-              defaultValue?: T;
+              hidden?: T;
               id?: T;
               blockName?: T;
             };
@@ -1032,8 +1036,10 @@ export interface FormsSelect<T extends boolean = true> {
           | {
               name?: T;
               label?: T;
+              placeholder?: T;
               width?: T;
               required?: T;
+              hidden?: T;
               id?: T;
               blockName?: T;
             };
@@ -1055,33 +1061,16 @@ export interface FormsSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
-        select?:
-          | T
-          | {
-              name?: T;
-              label?: T;
-              width?: T;
-              defaultValue?: T;
-              placeholder?: T;
-              options?:
-                | T
-                | {
-                    label?: T;
-                    value?: T;
-                    id?: T;
-                  };
-              required?: T;
-              id?: T;
-              blockName?: T;
-            };
         text?:
           | T
           | {
               name?: T;
               label?: T;
-              width?: T;
+              placeholder?: T;
               defaultValue?: T;
+              width?: T;
               required?: T;
+              hidden?: T;
               id?: T;
               blockName?: T;
             };
@@ -1090,9 +1079,22 @@ export interface FormsSelect<T extends boolean = true> {
           | {
               name?: T;
               label?: T;
-              width?: T;
-              defaultValue?: T;
+              placeholder?: T;
               required?: T;
+              hidden?: T;
+              id?: T;
+              blockName?: T;
+            };
+        phone?:
+          | T
+          | {
+              name?: T;
+              label?: T;
+              placeholder?: T;
+              defaultValue?: T;
+              width?: T;
+              required?: T;
+              hidden?: T;
               id?: T;
               blockName?: T;
             };
@@ -1103,6 +1105,8 @@ export interface FormsSelect<T extends boolean = true> {
   redirect?:
     | T
     | {
+        type?: T;
+        reference?: T;
         url?: T;
       };
   emails?:
@@ -1117,6 +1121,7 @@ export interface FormsSelect<T extends boolean = true> {
         message?: T;
         id?: T;
       };
+  requireRecaptcha?: T;
   updatedAt?: T;
   createdAt?: T;
 }
