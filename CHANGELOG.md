@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.10.0...v1.11.0) (2025-11-13)
+
+
+### Features
+
+* implement payload cms forms ([db684dd](https://github.com/m6o4solutions/payload-template-project/commit/db684dd23704b631fbcf28246d4a311b933b313a))
+
 # [1.10.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.9.0...v1.10.0) (2025-10-17)
 
 
