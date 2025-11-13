@@ -1,18 +1,12 @@
-import { revalidatePath, revalidateTag } from "next/cache";
-
-import type { CollectionAfterChangeHook, CollectionAfterDeleteHook } from "payload";
-
 import type { Page } from "@/payload-types";
+import { revalidatePath, revalidateTag } from "next/cache";
+import type { CollectionAfterChangeHook, CollectionAfterDeleteHook } from "payload";
 
 /**
  * revalidates the page path and sitemap tag after a page document is changed.
  * This handles publishing new pages and unpublishing old paths.
  */
-const revalidatePage: CollectionAfterChangeHook<Page> = ({
-	doc,
-	previousDoc,
-	req: { payload, context },
-}) => {
+const revalidatePage: CollectionAfterChangeHook<Page> = ({ doc, previousDoc, req: { payload, context } }) => {
 	if (!context.disableRevalidate) {
 		if (doc._status === "published") {
 			const path = doc.slug === "home" ? "/" : `/${doc.slug}`;
@@ -20,7 +14,7 @@ const revalidatePage: CollectionAfterChangeHook<Page> = ({
 			payload.logger.info(`Revalidating page at ${path}...`);
 
 			revalidatePath(path);
-			revalidateTag("pages-sitemap");
+			revalidateTag("default", "pages-sitemap");
 		}
 
 		// if the page was previously published, revalidate the old path to remove it from the cache
@@ -30,7 +24,7 @@ const revalidatePage: CollectionAfterChangeHook<Page> = ({
 			payload.logger.info(`Revalidating old page at ${oldPath}...`);
 
 			revalidatePath(oldPath);
-			revalidateTag("pages-sitemap");
+			revalidateTag("default", "pages-sitemap");
 		}
 	}
 	return doc;
@@ -47,7 +41,7 @@ const revalidateDelete: CollectionAfterDeleteHook<Page> = ({ doc, req: { context
 		// req.payload.logger.info(`Revalidating deleted page at path: ${path}`)
 
 		revalidatePath(path);
-		revalidateTag("pages-sitemap");
+		revalidateTag("default", "pages-sitemap");
 	}
 
 	return doc;

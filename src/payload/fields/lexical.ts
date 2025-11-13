@@ -1,13 +1,12 @@
 import {
 	BoldFeature,
 	ItalicFeature,
+	lexicalEditor,
 	LinkFeature,
 	ParagraphFeature,
 	UnderlineFeature,
-	lexicalEditor,
 	type LinkFields,
 } from "@payloadcms/richtext-lexical";
-
 import type { TextFieldSingleValidation } from "payload";
 
 const lexical = lexicalEditor({
@@ -29,9 +28,7 @@ const lexical = lexicalEditor({
 					{
 						name: "url",
 						type: "text",
-						admin: {
-							condition: (_data, siblingData) => siblingData?.linkType !== "internal",
-						},
+						admin: { condition: (_data, siblingData) => siblingData?.linkType !== "internal" },
 						label: ({ t }) => t("fields:enterURL"),
 						required: true,
 						validate: ((value, options) => {

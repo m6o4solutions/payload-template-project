@@ -1,18 +1,12 @@
-import { revalidatePath, revalidateTag } from "next/cache";
-
-import type { CollectionAfterChangeHook, CollectionAfterDeleteHook } from "payload";
-
 import type { Post } from "@/payload-types";
+import { revalidatePath, revalidateTag } from "next/cache";
+import type { CollectionAfterChangeHook, CollectionAfterDeleteHook } from "payload";
 
 /**
  * revalidates the post path and sitemap tag after a post document is changed.
  * handles publishing new posts and unpublishing old paths.
  */
-const revalidatePost: CollectionAfterChangeHook<Post> = ({
-	doc,
-	previousDoc,
-	req: { payload, context },
-}) => {
+const revalidatePost: CollectionAfterChangeHook<Post> = ({ doc, previousDoc, req: { payload, context } }) => {
 	if (!context.disableRevalidate) {
 		if (doc._status === "published") {
 			const path = `/posts/${doc.slug}`;
@@ -20,7 +14,7 @@ const revalidatePost: CollectionAfterChangeHook<Post> = ({
 			payload.logger.info(`Revalidating post at ${path}...`);
 
 			revalidatePath(path);
-			revalidateTag("posts-sitemap");
+			revalidateTag("default", "posts-sitemap");
 		}
 
 		// if the post was previously published, revalidate the old path to remove it from the cache
@@ -30,7 +24,7 @@ const revalidatePost: CollectionAfterChangeHook<Post> = ({
 			payload.logger.info(`Revalidating old post at ${oldPath}...`);
 
 			revalidatePath(oldPath);
-			revalidateTag("posts-sitemap");
+			revalidateTag("default", "posts-sitemap");
 		}
 	}
 	return doc;
@@ -44,7 +38,7 @@ const revalidateDelete: CollectionAfterDeleteHook<Post> = ({ doc, req: { context
 		const path = `/posts/${doc?.slug}`;
 
 		revalidatePath(path);
-		revalidateTag("posts-sitemap");
+		revalidateTag("default", "posts-sitemap");
 	}
 
 	return doc;
