@@ -1,3 +1,15 @@
+# [1.12.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.11.0...v1.12.0) (2025-11-14)
+
+
+### Bug Fixes
+
+* revalidateTag issue for page, posts and redirects ([aefb42b](https://github.com/m6o4solutions/payload-template-project/commit/aefb42b283fb20f0b49c8819a05b4ac892153795))
+
+
+### Features
+
+* implement sitemaps to payload ([07f06ad](https://github.com/m6o4solutions/payload-template-project/commit/07f06ada5e04053904fcb29ff8bb6074b9f6e49f))
+
 # [1.11.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.10.0...v1.11.0) (2025-11-13)
 
 
