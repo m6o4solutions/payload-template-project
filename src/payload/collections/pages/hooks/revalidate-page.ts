@@ -14,7 +14,7 @@ const revalidatePage: CollectionAfterChangeHook<Page> = ({ doc, previousDoc, req
 			payload.logger.info(`Revalidating page at ${path}...`);
 
 			revalidatePath(path);
-			revalidateTag("default", "pages-sitemap");
+			revalidateTag("pages-sitemap", "max");
 		}
 
 		// if the page was previously published, revalidate the old path to remove it from the cache
@@ -24,7 +24,7 @@ const revalidatePage: CollectionAfterChangeHook<Page> = ({ doc, previousDoc, req
 			payload.logger.info(`Revalidating old page at ${oldPath}...`);
 
 			revalidatePath(oldPath);
-			revalidateTag("default", "pages-sitemap");
+			revalidateTag("pages-sitemap", "max");
 		}
 	}
 	return doc;
@@ -41,7 +41,7 @@ const revalidateDelete: CollectionAfterDeleteHook<Page> = ({ doc, req: { context
 		// req.payload.logger.info(`Revalidating deleted page at path: ${path}`)
 
 		revalidatePath(path);
-		revalidateTag("default", "pages-sitemap");
+		revalidateTag("pages-sitemap", "max");
 	}
 
 	return doc;

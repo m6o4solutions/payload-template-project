@@ -14,7 +14,7 @@ const revalidatePost: CollectionAfterChangeHook<Post> = ({ doc, previousDoc, req
 			payload.logger.info(`Revalidating post at ${path}...`);
 
 			revalidatePath(path);
-			revalidateTag("default", "posts-sitemap");
+			revalidateTag("posts-sitemap", "max");
 		}
 
 		// if the post was previously published, revalidate the old path to remove it from the cache
@@ -24,7 +24,7 @@ const revalidatePost: CollectionAfterChangeHook<Post> = ({ doc, previousDoc, req
 			payload.logger.info(`Revalidating old post at ${oldPath}...`);
 
 			revalidatePath(oldPath);
-			revalidateTag("default", "posts-sitemap");
+			revalidateTag("posts-sitemap", "max");
 		}
 	}
 	return doc;
@@ -38,7 +38,7 @@ const revalidateDelete: CollectionAfterDeleteHook<Post> = ({ doc, req: { context
 		const path = `/posts/${doc?.slug}`;
 
 		revalidatePath(path);
-		revalidateTag("default", "posts-sitemap");
+		revalidateTag("posts-sitemap", "max");
 	}
 
 	return doc;
