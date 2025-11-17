@@ -45,7 +45,10 @@ const Input = (props: Props) => {
 		case "email":
 			pattern = {
 				required: props.required,
-				pattern: { message: "Please enter a valid email address.", value: /^\S[^\s@]*@\S+$/ },
+				pattern: {
+					message: "Please enter a valid email address.",
+					value: /^\S[^\s@]*@\S+$/,
+				},
 			};
 			break;
 		// other input types could have custom patterns defined here
@@ -70,7 +73,11 @@ const Input = (props: Props) => {
 				className={`w-full rounded-md border border-emerald-950 bg-white p-2 leading-tight text-emerald-950`}
 				id={props.name}
 				// defaults the placeholder text if none is provided
-				placeholder={props.placeholder ? props.placeholder : `Enter your ${props.label.toLowerCase()}`}
+				placeholder={
+					props.placeholder
+						? props.placeholder
+						: `Enter your ${props.label.toLowerCase()}`
+				}
 				type={props.type}
 				hidden={props.hidden}
 				// sets the initial value if provided

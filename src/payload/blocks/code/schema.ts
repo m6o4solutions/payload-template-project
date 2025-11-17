@@ -13,26 +13,12 @@ const Code: Block = {
 			type: "select",
 			defaultValue: "typescript",
 			options: [
-				{
-					label: "Typescript",
-					value: "typescript",
-				},
-				{
-					label: "Javascript",
-					value: "javascript",
-				},
-				{
-					label: "CSS",
-					value: "css",
-				},
+				{ label: "Typescript", value: "typescript" },
+				{ label: "Javascript", value: "javascript" },
+				{ label: "CSS", value: "css" },
 			],
 		},
-		{
-			name: "code",
-			type: "code",
-			label: false,
-			required: true,
-		},
+		{ name: "code", type: "code", label: false, required: true },
 	],
 };
 

@@ -1,9 +1,7 @@
 "use client";
 
-import React from "react";
-import { Highlight, themes } from "prism-react-renderer";
-
 import { CopyButton } from "@/payload/blocks/code/copy-button";
+import { Highlight, themes } from "prism-react-renderer";
 
 type Props = {
 	code: string;

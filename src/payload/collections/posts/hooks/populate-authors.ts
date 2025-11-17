@@ -1,5 +1,5 @@
-import type { CollectionAfterReadHook } from "payload";
 import type { User } from "@/payload-types";
+import type { CollectionAfterReadHook } from "payload";
 
 /**
  * manually populates author data into the 'populatedAuthors' field to safely expose

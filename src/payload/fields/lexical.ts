@@ -28,7 +28,9 @@ const lexical = lexicalEditor({
 					{
 						name: "url",
 						type: "text",
-						admin: { condition: (_data, siblingData) => siblingData?.linkType !== "internal" },
+						admin: {
+							condition: (_data, siblingData) => siblingData?.linkType !== "internal",
+						},
 						label: ({ t }) => t("fields:enterURL"),
 						required: true,
 						validate: ((value, options) => {

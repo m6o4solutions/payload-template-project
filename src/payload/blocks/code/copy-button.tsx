@@ -1,9 +1,8 @@
 "use client";
 
-import { useState } from "react";
-
 import { Button } from "@/components/ui/button";
 import { CopyIcon } from "@payloadcms/ui/icons/Copy";
+import { useState } from "react";
 
 /**
  * a client-side button component that copies the provided code string to the clipboard

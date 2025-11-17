@@ -1,41 +1,39 @@
-import type { ElementType, Ref } from "react";
-import type { StaticImageData } from "next/image";
-
 import type { Media as MediaType } from "@/payload-types";
+import type { StaticImageData } from "next/image";
+import type { ElementType, Ref } from "react";
 
 /**
- * @interface Props
- * @description defines the props for a versatile media component capable of rendering
+ * defines the props for a versatile media component capable of rendering
  * payload cms media, static next.js images, or standard html elements (e.g., video/img).
  */
 export interface Props {
-	// standard alt text for accessibility.
+	// standard alt text for accessibility when rendering images.
 	alt?: string;
-	// classes applied to the main wrapper/root element.
+	// classes applied to the root element wrapping the media.
 	className?: string;
-	// boolean flag to make the image fill the parent container (next.js Image specific).
+	// boolean flag to make the image fill the parent container (next.js image specific).
 	fill?: boolean;
-	// allows the component to be rendered as a different html element (e.g., 'div', 'span').
+	// allows the component to be rendered as a different html element (e.g., 'div').
 	htmlElement?: ElementType | null;
-	// classes applied specifically to the <picture> element wrapper (if used).
+	// classes applied specifically to the picture element wrapper, if used.
 	pictureClassName?: string;
 	// classes applied directly to the final <img> element.
 	imgClassName?: string;
-	// click event handler.
+	// click event handler for user interaction.
 	onClick?: () => void;
-	// load event handler.
+	// load event handler, primarily useful for tracking image loading status.
 	onLoad?: () => void;
-	// loading strategy for the image ('lazy' is default) (Next.js Image specific).
+	// loading strategy for the image ('lazy' is default) (next.js image specific).
 	loading?: "lazy" | "eager";
-	// priority loading flag for lcp images (next.js Image specific).
+	// priority loading flag for lcp images (next.js image specific).
 	priority?: boolean;
-	// forwarded Ref for accessing the underlying DOM element (img or video).
+	// forwarded ref for accessing the underlying dom element (img or video).
 	ref?: Ref<HTMLImageElement | HTMLVideoElement | null>;
-	// the source data: either a full Payload Media object or its ID/URL string.
+	// the source data: a full payload media object, its id, or its url string.
 	resource?: MediaType | string | number | null;
-	// sizes attribute for responsive image loading (next.js Image specific).
+	// sizes attribute for responsive image loading optimization (next.js image specific).
 	size?: string;
-	// source data for locally imported static images (next.js Image specific).
+	// source data for locally imported static images (next.js image specific).
 	src?: StaticImageData;
 	// classes applied specifically to the <video> element.
 	videoClassName?: string;

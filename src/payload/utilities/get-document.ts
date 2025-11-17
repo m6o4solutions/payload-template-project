@@ -15,11 +15,7 @@ const getDocument = async (collection: Collection, slug: string, depth = 0) => {
 	const page = await payload.find({
 		collection,
 		depth,
-		where: {
-			slug: {
-				equals: slug,
-			},
-		},
+		where: { slug: { equals: slug } },
 	});
 
 	// return the first matching document

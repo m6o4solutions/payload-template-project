@@ -6,7 +6,11 @@ import type { CollectionAfterChangeHook, CollectionAfterDeleteHook } from "paylo
  * revalidates the page path and sitemap tag after a page document is changed.
  * This handles publishing new pages and unpublishing old paths.
  */
-const revalidatePage: CollectionAfterChangeHook<Page> = ({ doc, previousDoc, req: { payload, context } }) => {
+const revalidatePage: CollectionAfterChangeHook<Page> = ({
+	doc,
+	previousDoc,
+	req: { payload, context },
+}) => {
 	if (!context.disableRevalidate) {
 		if (doc._status === "published") {
 			const path = doc.slug === "home" ? "/" : `/${doc.slug}`;

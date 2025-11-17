@@ -1,88 +1,78 @@
-import { draftMode } from "next/headers";
-import { NextRequest } from "next/server";
-import { redirect } from "next/navigation";
-
-import { getPayload } from "payload";
 import config from "@payload-config";
-
+import { draftMode } from "next/headers";
+import { redirect } from "next/navigation";
+import { NextRequest } from "next/server";
+import { getPayload } from "payload";
 import type { CollectionSlug, PayloadRequest } from "payload";
 
 /**
- * @function GET
- * @description next.js api route handler for enabling draft mode (live preview).
- * this endpoint is typically called by payload cms to start a live preview session.
- * it performs security checks, validates user authentication, and enables next.js draft mode
- * before redirecting the user to the content path.
- *
- * @param {NextRequest} req - the incoming http request, containing search parameters and headers.
- * @returns {Promise<Response>} an http response indicating success, error, or a redirect.
+ * next.js api route handler for enabling draft mode (live preview).
+ * this endpoint is called by payload cms to start a live preview session,
+ * performing authentication and security checks before enabling next.js draft mode.
  */
 export async function GET(req: NextRequest): Promise<Response> {
-	// initialize payload to access auth and database functionality
+	// initialize payload to access authentication and database functionality.
 	const payload = await getPayload({ config: config });
 
-	// extract search parameters from the request url
+	// extract necessary parameters from the request url for validation and redirection.
 	const { searchParams } = new URL(req.url);
 
-	// the relative path to redirect to after enabling draft mode (e.g., '/about-us')
+	// the relative path to redirect to after enabling draft mode (e.g., '/about-us').
 	const path = searchParams.get("path");
 
-	// the collection slug of the document being previewed (e.g., 'pages')
+	// the collection slug of the document being previewed (e.g., 'pages').
 	const collection = searchParams.get("collection") as CollectionSlug;
 
-	// the slug of the document being previewed
+	// the slug of the document being previewed.
 	const slug = searchParams.get("slug");
 
-	// a secret token used for basic security verification
+	// a secret token used for basic security verification against environment variables.
 	const previewSecret = searchParams.get("previewSecret");
 
-	// check if the provided secret matches the environment secret
+	// security check 1: reject the request if the provided secret does not match the environment secret.
 	if (previewSecret !== process.env.PREVIEW_SECRET) {
-		return new Response("You are not allowed to preview this page.", { status: 403 });
+		return new Response("you are not allowed to preview this page.", { status: 403 });
 	}
 
-	// ensure all required parameters are present
+	// validation check: ensure all required parameters were passed.
 	if (!path || !collection || !slug) {
-		return new Response("Insufficient search params.", { status: 404 });
+		return new Response("insufficient search params.", { status: 404 });
 	}
 
-	// safety check: ensure the path is a relative path starting with '/'
+	// validation check: ensure the target path is a relative path starting with '/'.
 	if (!path.startsWith("/")) {
-		return new Response("This endpoint can only be used for relative previews.", {
+		return new Response("this endpoint can only be used for relative previews.", {
 			status: 500,
 		});
 	}
 
 	let user;
 
-	// attempt to authenticate the user using the payload token in the cookies/headers
+	// attempt to authenticate the user using the payload token in the cookies/headers.
 	try {
 		user = await payload.auth({
-			// cast nextrequest to payloadrequest for compatibility with payload's auth function
+			// cast nextrequest to payloadrequest to ensure compatibility with payload's authentication utility.
 			req: req as unknown as PayloadRequest,
 			headers: req.headers,
 		});
 	} catch (error) {
-		// log any errors during token verification
-		payload.logger.error({ err: error }, "Error verifying token for live preview.");
-		return new Response("You are not allowed to preview this page.", { status: 403 });
+		// log any errors during the authentication token verification process.
+		payload.logger.error({ err: error }, "error verifying token for live preview.");
+		return new Response("you are not allowed to preview this page.", { status: 403 });
 	}
 
-	// access next.js draft mode utility
+	// access next.js draft mode utility to control caching behavior.
 	const draft = await draftMode();
 
-	// if authentication fails, disable draft mode (if it was active) and deny access
+	// if user authentication failed, disable draft mode (in case it was already active) and deny access.
 	if (!user) {
 		draft.disable();
-		return new Response("You are not allowed to preview this page.", { status: 403 });
+		return new Response("you are not allowed to preview this page.", { status: 403 });
 	}
 
-	// you can add additional checks here to see if the user is allowed to preview this page,
-	// for example, checking user roles or document access permissions.
-
-	// security checks passed, enable next.js draft mode
+	// all security and validation checks passed, proceed to enable next.js draft mode.
 	draft.enable();
 
-	// redirect the user to the content path, which will now render draft content
+	// redirect the user to the content path. next.js will now render the latest draft version.
 	redirect(path);
 }

@@ -5,7 +5,10 @@ import { RichText } from "@/components/rich-text";
 import { SubmitButton } from "@/components/submit-button";
 import { fields } from "@/payload/blocks/forms/fields";
 import { getClientSideURL } from "@/payload/utilities/get-url";
-import { mapPayloadFieldsToRHFDefaults, rhfdefaultvalues } from "@/payload/utilities/map-form-fields";
+import {
+	mapPayloadFieldsToRHFDefaults,
+	rhfdefaultvalues,
+} from "@/payload/utilities/map-form-fields";
 import type { Form as FormType } from "@payloadcms/plugin-form-builder/types";
 import type { SerializedEditorState } from "@payloadcms/richtext-lexical/lexical";
 import { LoaderCircle } from "lucide-react";
@@ -119,7 +122,10 @@ const FormBlock = (props: FormBlockProps) => {
 					<div className="space-y-8 lg:col-span-1">
 						{/* display companion text beside form when enabled and before submission */}
 						{enableCompanionText && companionText && !hasSubmitted && (
-							<RichText className="mb-8 md:mb-12 md:text-start" data={companionText as unknown as any} />
+							<RichText
+								className="mb-8 md:mb-12 md:text-start"
+								data={companionText as unknown as any}
+							/>
 						)}
 					</div>
 
@@ -143,7 +149,9 @@ const FormBlock = (props: FormBlockProps) => {
 								)}
 
 								{/* display user-facing errors if submission fails */}
-								{error && <div className="text-red-400">{`${error.status || "error"}: ${error.message || ""}`}</div>}
+								{error && (
+									<div className="text-red-400">{`${error.status || "error"}: ${error.message || ""}`}</div>
+								)}
 
 								{/* render dynamic fields when form is not yet submitted */}
 								{!hasSubmitted && (
@@ -151,7 +159,9 @@ const FormBlock = (props: FormBlockProps) => {
 										<div className="mb-4 last:mb-0 sm:flex sm:flex-wrap sm:gap-4">
 											{formFromProps?.fields?.map((field, index) => {
 												// resolve and render field component based on payload configuration
-												const Field: FieldComponent = (fields as Record<string, FieldComponent>)[field.blockType];
+												const Field: FieldComponent = (
+													fields as Record<string, FieldComponent>
+												)[field.blockType];
 												if (!Field) return null;
 
 												return (
@@ -169,7 +179,11 @@ const FormBlock = (props: FormBlockProps) => {
 										</div>
 
 										{/* display the form submission button */}
-										<SubmitButton loading={isLoading} text={submitButtonLabel ?? "Submit"} form={formID} />
+										<SubmitButton
+											loading={isLoading}
+											text={submitButtonLabel ?? "Submit"}
+											form={formID}
+										/>
 									</form>
 								)}
 							</FormProvider>

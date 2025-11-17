@@ -6,7 +6,11 @@ import type { CollectionAfterChangeHook, CollectionAfterDeleteHook } from "paylo
  * revalidates the post path and sitemap tag after a post document is changed.
  * handles publishing new posts and unpublishing old paths.
  */
-const revalidatePost: CollectionAfterChangeHook<Post> = ({ doc, previousDoc, req: { payload, context } }) => {
+const revalidatePost: CollectionAfterChangeHook<Post> = ({
+	doc,
+	previousDoc,
+	req: { payload, context },
+}) => {
 	if (!context.disableRevalidate) {
 		if (doc._status === "published") {
 			const path = `/posts/${doc.slug}`;
