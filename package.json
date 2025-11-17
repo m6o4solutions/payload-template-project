@@ -15,7 +15,7 @@
 		"start": "cross-env NODE_OPTIONS=--no-deprecation next start"
 	},
 	"dependencies": {
-		"@aws-sdk/client-s3": "^3.931.0",
+		"@aws-sdk/client-s3": "^3.932.0",
 		"@payloadcms/db-mongodb": "^3.64.0",
 		"@payloadcms/email-resend": "^3.64.0",
 		"@payloadcms/live-preview-react": "^3.64.0",
@@ -75,7 +75,7 @@
 		"@semantic-release/release-notes-generator": "^14.1.0",
 		"@tailwindcss/typography": "^0.5.19",
 		"@types/node": "^24.10.1",
-		"@types/react": "^19.2.4",
+		"@types/react": "^19.2.5",
 		"@types/react-dom": "^19.2.3",
 		"@types/react-google-recaptcha": "^2.1.9",
 		"eslint": "^9.39.1",
