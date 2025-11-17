@@ -1,6 +1,5 @@
-import type { Access, AccessArgs } from "payload";
-
 import type { User } from "@/payload-types";
+import type { Access, AccessArgs } from "payload";
 
 type IsAuthenticated = (args: AccessArgs<User>) => boolean;
 
@@ -13,11 +12,7 @@ const isAuthenticatedOrPublished: Access = ({ req: { user } }) => {
 		return true;
 	}
 
-	return {
-		_status: {
-			equals: "published",
-		},
-	};
+	return { _status: { equals: "published" } };
 };
 
 const isPublic: Access = () => true;

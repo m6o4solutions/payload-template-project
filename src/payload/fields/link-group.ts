@@ -3,7 +3,10 @@ import type { LinkAppearances } from "@/payload/fields/link";
 import deepMerge from "@/payload/utilities/deep-merge";
 import type { ArrayField, Field } from "payload";
 
-type LinkGroupType = (options?: { appearances?: LinkAppearances[] | false; overrides?: Partial<ArrayField> }) => Field;
+type LinkGroupType = (options?: {
+	appearances?: LinkAppearances[] | false;
+	overrides?: Partial<ArrayField>;
+}) => Field;
 
 const linkGroup: LinkGroupType = ({ appearances, overrides = {} } = {}) => {
 	const generatedLinkGroup: Field = {

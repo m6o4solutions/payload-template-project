@@ -30,7 +30,10 @@ const config: IConfig = {
 
 		// explicitly lists the sitemaps that represent meaningful public content
 		// this is how crawlers discover your segmented sitemaps (pages, posts, services).
-		additionalSitemaps: [`${SITE_URL}/pages-sitemap.xml`, `${SITE_URL}/posts-sitemap.xml`],
+		additionalSitemaps: [
+			`${SITE_URL}/pages-sitemap.xml`,
+			`${SITE_URL}/posts-sitemap.xml`,
+		],
 	},
 };
 

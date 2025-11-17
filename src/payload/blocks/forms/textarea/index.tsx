@@ -13,7 +13,14 @@ type TextareaProps = {
 } & TextAreaField;
 
 // this component renders a textarea input field, handling form state and error display
-const Textarea = ({ name, errors, label, register, required: requiredFromProps, rows = 3 }: TextareaProps) => {
+const Textarea = ({
+	name,
+	errors,
+	label,
+	register,
+	required: requiredFromProps,
+	rows = 3,
+}: TextareaProps) => {
 	return (
 		// ensures the component occupies the full width of its container
 		<div className={`w-full`}>

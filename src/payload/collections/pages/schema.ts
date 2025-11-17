@@ -1,6 +1,12 @@
-import { isAuthenticated, isAuthenticatedOrPublished } from "@/payload/access/access-control";
+import {
+	isAuthenticated,
+	isAuthenticatedOrPublished,
+} from "@/payload/access/access-control";
 import { Archive } from "@/payload/blocks/archive/schema";
-import { revalidateDelete, revalidatePage } from "@/payload/collections/pages/hooks/revalidate-page";
+import {
+	revalidateDelete,
+	revalidatePage,
+} from "@/payload/collections/pages/hooks/revalidate-page";
 import { slugField } from "@/payload/fields/slug";
 import { populatePublishedAt } from "@/payload/hooks/populate-published-at";
 import { generatePreviewPath } from "@/payload/utilities/generate-preview-path";
@@ -111,8 +117,15 @@ const Pages: CollectionConfig<"pages"> = {
 			},
 		},
 	],
-	hooks: { afterChange: [revalidatePage], beforeChange: [populatePublishedAt], afterDelete: [revalidateDelete] },
-	versions: { drafts: { autosave: { interval: 100 }, schedulePublish: true }, maxPerDoc: 50 },
+	hooks: {
+		afterChange: [revalidatePage],
+		beforeChange: [populatePublishedAt],
+		afterDelete: [revalidateDelete],
+	},
+	versions: {
+		drafts: { autosave: { interval: 100 }, schedulePublish: true },
+		maxPerDoc: 50,
+	},
 };
 
 export { Pages };

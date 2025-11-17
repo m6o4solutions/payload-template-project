@@ -40,13 +40,7 @@ const generateMeta = async (args: {
 		description: doc?.meta?.description,
 		openGraph: mergeOpenGraph({
 			description: doc?.meta?.description || "",
-			images: ogImage
-				? [
-						{
-							url: ogImage,
-						},
-					]
-				: undefined,
+			images: ogImage ? [{ url: ogImage }] : undefined,
 			title,
 			// construct a url-friendly slug path if the slug is an array
 			url: Array.isArray(doc?.slug) ? doc.slug.join("/") : "/",

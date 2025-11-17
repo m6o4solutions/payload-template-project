@@ -17,7 +17,15 @@ type CheckboxProps = CheckboxField & {
 };
 
 // this component renders a custom checkbox field, integrating with Payload fields, react-hook-form, and layout rules
-export const Checkbox = ({ name, defaultValue, errors, label, register, required, width }: CheckboxProps) => {
+export const Checkbox = ({
+	name,
+	defaultValue,
+	errors,
+	label,
+	register,
+	required,
+	width,
+}: CheckboxProps) => {
 	// register the field with react-hook-form and capture its resulting props
 	const props = register(name, { required: required });
 	// retrieve the setValue function to manually update the form state
