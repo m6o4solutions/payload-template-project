@@ -57,6 +57,26 @@ const beforeEmail: BeforeEmail<FormSubmission> = (emails) => {
 	}));
 };
 
+// determine the environment
+const isProduction = process.env.NODE_ENV === "production";
+
+// define the unified environment variables based on the environment
+if (isProduction) {
+	// production: use cloudflare
+	process.env.S3_BUCKET = process.env.CLOUDFLARE_BUCKET!;
+	process.env.S3_ACCESS_KEY_ID = process.env.CLOUDFLARE_ACCESS_KEY_ID!;
+	process.env.S3_ACCESS_KEY_SECRET = process.env.CLOUDFLARE_ACCESS_KEY_SECRET!;
+	process.env.S3_REGION = process.env.CLOUDFLARE_REGION!;
+	process.env.S3_ENDPOINT = process.env.CLOUDFLARE_ENDPOINT!;
+} else {
+	// development: use minio
+	process.env.S3_BUCKET = process.env.MINIO_BUCKET!;
+	process.env.S3_ACCESS_KEY_ID = process.env.MINIO_ACCESS_KEY_ID!;
+	process.env.S3_ACCESS_KEY_SECRET = process.env.MINIO_ACCESS_KEY_SECRET!;
+	process.env.S3_REGION = process.env.MINIO_REGION!;
+	process.env.S3_ENDPOINT = process.env.MINIO_ENDPOINT!;
+}
+
 // defines the central plugin configuration for the payload cms instance
 // each plugin extends payload functionality to support forms, seo, search, redirects, storage, and cloud hosting
 const plugins: Plugin[] = [
