@@ -1,16 +1,16 @@
 ## [1.13.1](https://github.com/m6o4solutions/payload-template-project/compare/v1.13.0...v1.13.1) (2025-11-20)
 
-
 ### Bug Fixes
 
-* update payload meta icon filename in environment configuration ([6dc890c](https://github.com/m6o4solutions/payload-template-project/commit/6dc890c1a66c7622f3bf01dee9648ed6114ac9fe))
+- update payload meta icon filename in environment configuration
+  ([6dc890c](https://github.com/m6o4solutions/payload-template-project/commit/6dc890c1a66c7622f3bf01dee9648ed6114ac9fe))
 
 # [1.13.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.12.0...v1.13.0) (2025-11-17)
 
-
 ### Features
 
-* update environment variables for database and storage configurations ([2c363b7](https://github.com/m6o4solutions/payload-template-project/commit/2c363b7400645ee13a85ca1130e810d9893727d7))
+- update environment variables for database and storage configurations
+  ([2c363b7](https://github.com/m6o4solutions/payload-template-project/commit/2c363b7400645ee13a85ca1130e810d9893727d7))
 
 # [1.12.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.11.0...v1.12.0) (2025-11-14)
 
