@@ -1,10 +1,10 @@
 "use client";
 
 import { motion } from "motion/react";
-import React from "react";
+import { ReactNode } from "react";
 
 // defines the props for the template component, expecting only children elements.
-const template = ({ children }: { children: React.ReactNode }) => {
+const template = ({ children }: { children: ReactNode }) => {
 	return (
 		// motion.div applies animation context to the children elements.
 		<motion.div
@@ -20,4 +20,4 @@ const template = ({ children }: { children: React.ReactNode }) => {
 	);
 };
 
-export default template;
+export { template as default };
