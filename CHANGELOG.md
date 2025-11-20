@@ -1,3 +1,10 @@
+## [1.13.1](https://github.com/m6o4solutions/payload-template-project/compare/v1.13.0...v1.13.1) (2025-11-20)
+
+
+### Bug Fixes
+
+* update payload meta icon filename in environment configuration ([6dc890c](https://github.com/m6o4solutions/payload-template-project/commit/6dc890c1a66c7622f3bf01dee9648ed6114ac9fe))
+
 # [1.13.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.12.0...v1.13.0) (2025-11-17)
 
 
