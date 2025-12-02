@@ -1,7 +1,7 @@
 # check=skip=SecretsUsedInArgOrEnv
 
 # Base image with Node.js 22 on Alpine
-FROM node:22-alpine AS build
+FROM node:22-alpine AS base
 
 # This is required for Payload CMS (Sharp) to work on Alpine.
 RUN apk add --no-cache libc6-compat
