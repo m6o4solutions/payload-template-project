@@ -22,6 +22,9 @@ const databaseURI = isProduction
 	? process.env.DATABASE_URI_PRD! // use production database
 	: process.env.DATABASE_URI_DEV!; // use development database
 
+// check if we are currently building in Docker
+const isBuild = process.env.PAYLOAD_BUILDING === "true";
+
 export default buildConfig({
 	admin: {
 		components: {
@@ -53,7 +56,15 @@ export default buildConfig({
 	// register all custom collections.
 	collections: collections,
 	// configure mongodb adapter using the conditionally selected database uri.
-	db: mongooseAdapter({ url: databaseURI }),
+	db: isBuild
+      ? ({
+           init: async () => {},
+           connect: async () => {},
+           defaultIDType: 'text',
+           name: 'mongoose-mock',
+           payload: {} as any,
+        } as any)
+      : mongooseAdapter({ url: databaseURI }),
 	// set the default rich text editor to lexical.
 	editor: lexical,
 	// configure resend as the email delivery provider.
