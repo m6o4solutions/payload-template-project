@@ -63,6 +63,24 @@ export default buildConfig({
            defaultIDType: 'text',
            name: 'mongoose-mock',
            payload: {} as any,
+           // fix: add dummy query methods so generateStaticParams doesn't crash
+           find: async () => ({ 
+               docs: [], 
+               totalDocs: 0, 
+               limit: 10, 
+               totalPages: 1, 
+               page: 1, 
+               pagingCounter: 1, 
+               hasPrevPage: false, 
+               hasNextPage: false, 
+               prevPage: null, 
+               nextPage: null 
+           }),
+           findOne: async () => null,
+           create: async () => null,
+           update: async () => null,
+           delete: async () => null,
+           count: async () => 0,
         } as any)
       : mongooseAdapter({ url: databaseURI }),
 	// set the default rich text editor to lexical.
