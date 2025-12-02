@@ -57,13 +57,13 @@ export default buildConfig({
 	collections: collections,
 	// configure mongodb adapter using the conditionally selected database uri.
 	db: isBuild
-      ? () => ({
+      ? ({
            init: async () => {},
            connect: async () => {},
            defaultIDType: 'text',
            name: 'mongoose-mock',
            payload: {} as any,
-           // dummy methods to satisfy Payload/Next.js build process
+           // mock methods for next.js static generation
            find: async () => ({ 
                docs: [], totalDocs: 0, limit: 10, totalPages: 1, page: 1, pagingCounter: 1, hasPrevPage: false, hasNextPage: false, prevPage: null, nextPage: null 
            }),
@@ -76,6 +76,9 @@ export default buildConfig({
            queryDrafts: async () => ({ docs: [] }),
            findGlobal: async () => null,
            findVersions: async () => ({ docs: [] }),
+           beginTransaction: async () => null,
+           commitTransaction: async () => null,
+           rollbackTransaction: async () => null,
         } as any)
       : mongooseAdapter({ url: databaseURI }),
 	// set the default rich text editor to lexical.
