@@ -22,9 +22,6 @@ const databaseURI = isProduction
 	? process.env.DATABASE_URI_PRD! // use production database
 	: process.env.DATABASE_URI_DEV!; // use development database
 
-// check if we are currently building in Docker
-const isBuild = process.env.PAYLOAD_BUILDING === "true";
-
 export default buildConfig({
 	admin: {
 		components: {
@@ -56,31 +53,7 @@ export default buildConfig({
 	// register all custom collections.
 	collections: collections,
 	// configure mongodb adapter using the conditionally selected database uri.
-	db: isBuild
-      ? ({
-           init: async () => {},
-           connect: async () => {},
-           defaultIDType: 'text',
-           name: 'mongoose-mock',
-           payload: {} as any,
-           // mock methods for next.js static generation
-           find: async () => ({ 
-               docs: [], totalDocs: 0, limit: 10, totalPages: 1, page: 1, pagingCounter: 1, hasPrevPage: false, hasNextPage: false, prevPage: null, nextPage: null 
-           }),
-           findOne: async () => null,
-           create: async () => null,
-           update: async () => null,
-           delete: async () => null,
-           deleteOne: async () => null,
-           count: async () => 0,
-           queryDrafts: async () => ({ docs: [] }),
-           findGlobal: async () => null,
-           findVersions: async () => ({ docs: [] }),
-           beginTransaction: async () => null,
-           commitTransaction: async () => null,
-           rollbackTransaction: async () => null,
-        } as any)
-      : mongooseAdapter({ url: databaseURI }),
+	db: mongooseAdapter({ url: databaseURI }),
 	// set the default rich text editor to lexical.
 	editor: lexical,
 	// configure resend as the email delivery provider.
