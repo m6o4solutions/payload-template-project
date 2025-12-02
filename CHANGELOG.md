@@ -1,3 +1,10 @@
+## [1.13.7](https://github.com/m6o4solutions/payload-template-project/compare/v1.13.6...v1.13.7) (2025-12-02)
+
+
+### Bug Fixes
+
+* enhance db config with mock methods for Next.js ([709a64b](https://github.com/m6o4solutions/payload-template-project/commit/709a64b42130c0fcedec853262e3a45df243f82f))
+
 ## [1.13.6](https://github.com/m6o4solutions/payload-template-project/compare/v1.13.5...v1.13.6) (2025-12-02)
 
 
