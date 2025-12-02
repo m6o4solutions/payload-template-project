@@ -1,3 +1,10 @@
+## [1.13.6](https://github.com/m6o4solutions/payload-template-project/compare/v1.13.5...v1.13.6) (2025-12-02)
+
+
+### Bug Fixes
+
+* add dummy methods to MongoDB adapter ([ad321e4](https://github.com/m6o4solutions/payload-template-project/commit/ad321e47e32b7d0b4bdb6c06f8d1d5e3863ad77f))
+
 ## [1.13.5](https://github.com/m6o4solutions/payload-template-project/compare/v1.13.4...v1.13.5) (2025-12-02)
 
 
