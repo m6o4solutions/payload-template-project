@@ -1,14 +1,14 @@
-# check=skip=SecretsUsedInArgOrEnv
-
 # Base image with Node.js 22 on Alpine
 FROM node:22-alpine AS base
+
+# CRITICAL FIX: Install libc6-compat in BASE so it exists in the final runner.
+# This is required for Payload CMS (Sharp) to work on Alpine.
+RUN apk add --no-cache libc6-compat
 
 # ----------------------
 # 1. Dependencies stage
 # ----------------------
 FROM base AS deps
-
-RUN apk add --no-cache libc6-compat
 
 WORKDIR /app
 
@@ -30,15 +30,15 @@ COPY --from=deps /app/node_modules ./node_modules
 
 COPY . .
 
-# Provide placeholder envs so Next.js doesn't crash during build
-ENV DATABASE_URI="placeholder"
-ENV PAYLOAD_SECRET="placeholder"
-ENV PREVIEW_SECRET="placeholder"
-ENV RESEND_API_KEY="placeholder"
-ENV RESEND_FROM_EMAIL="placeholder@email.com"
-ENV RESEND_FROM_NAME="placeholder"
-ENV UPLOADTHING_TOKEN="placeholder"
-ENV NEXT_PUBLIC_SERVER_URL="http://placeholder.com"
+# We define them as ARGs so GitHub Actions can pass them in during the build
+ARG NEXT_PUBLIC_SERVER_URL
+ARG NEXT_PUBLIC_META_ICON
+ARG NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+
+# We map them to ENV variables so Next.js can see them during build
+ENV NEXT_PUBLIC_SERVER_URL=${NEXT_PUBLIC_SERVER_URL}
+ENV NEXT_PUBLIC_META_ICON=${NEXT_PUBLIC_META_ICON}
+ENV NEXT_PUBLIC_RECAPTCHA_SITE_KEY=${NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
 
 # Build Next.js app
 RUN corepack enable pnpm && pnpm build
@@ -54,18 +54,18 @@ ENV NODE_ENV=production
 
 # Create non-root user
 RUN addgroup --system --gid 1001 nodejs
-
 RUN adduser --system --uid 1001 nextjs
 
 # Copy only what’s needed for production
 COPY --from=builder /app/public ./public
 
+# Set up .next permissions
 RUN mkdir .next
-
 RUN chown nextjs:nodejs .next
 
+# Copy the standalone output
+# This includes the necessary node_modules and server.js
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 USER nextjs
