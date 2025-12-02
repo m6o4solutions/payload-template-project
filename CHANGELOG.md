@@ -1,3 +1,10 @@
+## [1.13.5](https://github.com/m6o4solutions/payload-template-project/compare/v1.13.4...v1.13.5) (2025-12-02)
+
+
+### Bug Fixes
+
+* add dummy query methods to payload.config.ts ([c9d9728](https://github.com/m6o4solutions/payload-template-project/commit/c9d97286b1ff0c7672e70b41486ba874cf35602e))
+
 ## [1.13.4](https://github.com/m6o4solutions/payload-template-project/compare/v1.13.3...v1.13.4) (2025-12-02)
 
 
