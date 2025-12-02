@@ -1,3 +1,10 @@
+## [1.13.3](https://github.com/m6o4solutions/payload-template-project/compare/v1.13.2...v1.13.3) (2025-12-02)
+
+
+### Bug Fixes
+
+* change base image to Node.js 22-alpine ([9d5aff0](https://github.com/m6o4solutions/payload-template-project/commit/9d5aff0e1efe8ae2a0f178117afe0e32418f3db4))
+
 ## [1.13.2](https://github.com/m6o4solutions/payload-template-project/compare/v1.13.1...v1.13.2) (2025-12-02)
 
 
