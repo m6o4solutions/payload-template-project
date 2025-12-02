@@ -1,7 +1,6 @@
 # Base image with Node.js 22 on Alpine
-FROM node:22-alpine AS base
+FROM node:22.21-alpine AS base
 
-# CRITICAL FIX: Install libc6-compat in BASE so it exists in the final runner.
 # This is required for Payload CMS (Sharp) to work on Alpine.
 RUN apk add --no-cache libc6-compat
 
