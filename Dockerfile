@@ -46,6 +46,7 @@ ENV DATABASE_URI_PRD="mongodb://placeholder"
 ENV PAYLOAD_SECRET="placeholder"
 ENV PREVIEW_SECRET="placeholder"
 ENV CRON_SECRET="placeholder"
+ENV NEXT_PRIVATE_RECAPTCHA_SECRET_KEY="placeholder"
 
 # Build Next.js app
 RUN corepack enable pnpm && pnpm build
