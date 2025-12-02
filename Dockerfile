@@ -42,7 +42,8 @@ ENV NEXT_PUBLIC_META_ICON=${NEXT_PUBLIC_META_ICON}
 ENV NEXT_PUBLIC_RECAPTCHA_SITE_KEY=${NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
 
 # Placeholders to prevent build errors
-ENV DATABASE_URI_PRD="mongodb://placeholder"
+ENV DATABASE_URI_PRD="mongodb://127.0.0.1/build-production-db"
+ENV DATABASE_URI_DEV="mongodb://127.0.0.1/build-development-db"
 ENV PAYLOAD_SECRET="placeholder"
 ENV PREVIEW_SECRET="placeholder"
 ENV CRON_SECRET="placeholder"
