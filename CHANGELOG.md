@@ -1,3 +1,10 @@
+## [1.13.2](https://github.com/m6o4solutions/payload-template-project/compare/v1.13.1...v1.13.2) (2025-12-02)
+
+
+### Bug Fixes
+
+* Implement mock database adapter for Docker builds ([50ee60c](https://github.com/m6o4solutions/payload-template-project/commit/50ee60c63473ab081b0a5e6425870650fd11c663))
+
 ## [1.13.1](https://github.com/m6o4solutions/payload-template-project/compare/v1.13.0...v1.13.1) (2025-11-20)
 
 ### Bug Fixes
