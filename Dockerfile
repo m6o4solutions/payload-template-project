@@ -1,3 +1,5 @@
+# check=skip=SecretsUsedInArgOrEnv
+
 # Base image with Node.js 22 on Alpine
 FROM node:22.21-alpine AS base
 
@@ -38,6 +40,12 @@ ARG NEXT_PUBLIC_RECAPTCHA_SITE_KEY
 ENV NEXT_PUBLIC_SERVER_URL=${NEXT_PUBLIC_SERVER_URL}
 ENV NEXT_PUBLIC_META_ICON=${NEXT_PUBLIC_META_ICON}
 ENV NEXT_PUBLIC_RECAPTCHA_SITE_KEY=${NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+
+# Placeholders to prevent build errors
+ENV DATABASE_URI_PRD="mongodb://placeholder"
+ENV PAYLOAD_SECRET="placeholder"
+ENV PREVIEW_SECRET="placeholder"
+ENV CRON_SECRET="placeholder"
 
 # Build Next.js app
 RUN corepack enable pnpm && pnpm build
