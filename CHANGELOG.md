@@ -1,3 +1,10 @@
+## [1.13.4](https://github.com/m6o4solutions/payload-template-project/compare/v1.13.3...v1.13.4) (2025-12-02)
+
+
+### Bug Fixes
+
+* rename build stage to base in Dockerfile ([2437d46](https://github.com/m6o4solutions/payload-template-project/commit/2437d469b3cfb9f9b34f7cbc9f45bb18e1f98142))
+
 ## [1.13.3](https://github.com/m6o4solutions/payload-template-project/compare/v1.13.2...v1.13.3) (2025-12-02)
 
 
