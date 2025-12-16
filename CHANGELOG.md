@@ -1,3 +1,11 @@
+# [1.14.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.13.7...v1.14.0) (2025-12-16)
+
+
+### Features
+
+* add Dockerfile and .dockerignore for containerization setup ([f0e7b5f](https://github.com/m6o4solutions/payload-template-project/commit/f0e7b5f0c266d91cde5c3dceafd8ae0c7a8ea1a7))
+* add GitHub Actions workflow to publish Docker image to GHCR ([334ffd7](https://github.com/m6o4solutions/payload-template-project/commit/334ffd7545e2ff282a5dd0a42a6c1ca3750cb096))
+
 ## [1.13.7](https://github.com/m6o4solutions/payload-template-project/compare/v1.13.6...v1.13.7) (2025-12-02)
 
 
