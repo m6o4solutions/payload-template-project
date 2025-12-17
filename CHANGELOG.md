@@ -1,3 +1,11 @@
+# [1.15.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.14.0...v1.15.0) (2025-12-17)
+
+
+### Features
+
+* add build-time environment variable for NEXT_PUBLIC_SERVER_URL ([70538b5](https://github.com/m6o4solutions/payload-template-project/commit/70538b57065d435d433082088ab83042bf9a774e))
+* implement GitHub Actions for building and pushing Docker images ([be55f87](https://github.com/m6o4solutions/payload-template-project/commit/be55f8745142131b4e0f22426b90335fa8299468))
+
 # [1.14.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.13.7...v1.14.0) (2025-12-16)
 
 
