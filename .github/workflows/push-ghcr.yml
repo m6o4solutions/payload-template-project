@@ -52,3 +52,4 @@ jobs:
           cache-to: type=gha,mode=max
           build-args: |
             NEXT_PUBLIC_SERVER_URL=${{ secrets.NEXT_PUBLIC_SERVER_URL }}
+            PAYLOAD_SECRET=${{ secrets.PAYLOAD_SECRET }}
