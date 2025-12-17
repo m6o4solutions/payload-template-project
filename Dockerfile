@@ -16,7 +16,7 @@ COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 RUN \
   if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
   elif [ -f package-lock.json ]; then npm ci; \
-  elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm i --frozen-lockfile; \  
+  elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm i --frozen-lockfile; \
   else echo "Lockfile not found." && exit 1; \
   fi
 
@@ -26,9 +26,13 @@ FROM base AS builder
 WORKDIR /app
 
 # make build-time env vars available
+ARG DATABASE_URI_DEV
+ARG DATABASE_URI_PRD
 ARG NEXT_PUBLIC_SERVER_URL
 ARG PAYLOAD_SECRET
 
+ENV DATABASE_URI_DEV=$DATABASE_URI_DEV
+ENV DATABASE_URI_PRD=$DATABASE_URI_PRD
 ENV NEXT_PUBLIC_SERVER_URL=$NEXT_PUBLIC_SERVER_URL
 ENV PAYLOAD_SECRET=$PAYLOAD_SECRET
 
