@@ -24,6 +24,10 @@ FROM base AS builder
 
 WORKDIR /app
 
+# make build-time env vars available
+ARG NEXT_PUBLIC_SERVER_URL
+ENV NEXT_PUBLIC_SERVER_URL=$NEXT_PUBLIC_SERVER_URL
+
 COPY --from=deps /app/node_modules ./node_modules
 
 COPY . .
