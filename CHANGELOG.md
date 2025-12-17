@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.16.0...v1.17.0) (2025-12-17)
+
+
+### Features
+
+* add build-time environment variables for database URIs ([06bf4b3](https://github.com/m6o4solutions/payload-template-project/commit/06bf4b328a6e118b439e41754049c65e7d8c95c9))
+
 # [1.16.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.15.0...v1.16.0) (2025-12-17)
 
 
