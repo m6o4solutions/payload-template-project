@@ -1,60 +1,62 @@
 # [1.15.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.14.0...v1.15.0) (2025-12-17)
 
-
 ### Features
 
-* add build-time environment variable for NEXT_PUBLIC_SERVER_URL ([70538b5](https://github.com/m6o4solutions/payload-template-project/commit/70538b57065d435d433082088ab83042bf9a774e))
-* implement GitHub Actions for building and pushing Docker images ([be55f87](https://github.com/m6o4solutions/payload-template-project/commit/be55f8745142131b4e0f22426b90335fa8299468))
+- add build-time environment variable for NEXT_PUBLIC_SERVER_URL
+  ([70538b5](https://github.com/m6o4solutions/payload-template-project/commit/70538b57065d435d433082088ab83042bf9a774e))
+- implement GitHub Actions for building and pushing Docker images
+  ([be55f87](https://github.com/m6o4solutions/payload-template-project/commit/be55f8745142131b4e0f22426b90335fa8299468))
 
 # [1.14.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.13.7...v1.14.0) (2025-12-16)
 
-
 ### Features
 
-* add Dockerfile and .dockerignore for containerization setup ([f0e7b5f](https://github.com/m6o4solutions/payload-template-project/commit/f0e7b5f0c266d91cde5c3dceafd8ae0c7a8ea1a7))
-* add GitHub Actions workflow to publish Docker image to GHCR ([334ffd7](https://github.com/m6o4solutions/payload-template-project/commit/334ffd7545e2ff282a5dd0a42a6c1ca3750cb096))
+- add Dockerfile and .dockerignore for containerization setup
+  ([f0e7b5f](https://github.com/m6o4solutions/payload-template-project/commit/f0e7b5f0c266d91cde5c3dceafd8ae0c7a8ea1a7))
+- add GitHub Actions workflow to publish Docker image to GHCR
+  ([334ffd7](https://github.com/m6o4solutions/payload-template-project/commit/334ffd7545e2ff282a5dd0a42a6c1ca3750cb096))
 
 ## [1.13.7](https://github.com/m6o4solutions/payload-template-project/compare/v1.13.6...v1.13.7) (2025-12-02)
 
-
 ### Bug Fixes
 
-* enhance db config with mock methods for Next.js ([709a64b](https://github.com/m6o4solutions/payload-template-project/commit/709a64b42130c0fcedec853262e3a45df243f82f))
+- enhance db config with mock methods for Next.js
+  ([709a64b](https://github.com/m6o4solutions/payload-template-project/commit/709a64b42130c0fcedec853262e3a45df243f82f))
 
 ## [1.13.6](https://github.com/m6o4solutions/payload-template-project/compare/v1.13.5...v1.13.6) (2025-12-02)
 
-
 ### Bug Fixes
 
-* add dummy methods to MongoDB adapter ([ad321e4](https://github.com/m6o4solutions/payload-template-project/commit/ad321e47e32b7d0b4bdb6c06f8d1d5e3863ad77f))
+- add dummy methods to MongoDB adapter
+  ([ad321e4](https://github.com/m6o4solutions/payload-template-project/commit/ad321e47e32b7d0b4bdb6c06f8d1d5e3863ad77f))
 
 ## [1.13.5](https://github.com/m6o4solutions/payload-template-project/compare/v1.13.4...v1.13.5) (2025-12-02)
 
-
 ### Bug Fixes
 
-* add dummy query methods to payload.config.ts ([c9d9728](https://github.com/m6o4solutions/payload-template-project/commit/c9d97286b1ff0c7672e70b41486ba874cf35602e))
+- add dummy query methods to payload.config.ts
+  ([c9d9728](https://github.com/m6o4solutions/payload-template-project/commit/c9d97286b1ff0c7672e70b41486ba874cf35602e))
 
 ## [1.13.4](https://github.com/m6o4solutions/payload-template-project/compare/v1.13.3...v1.13.4) (2025-12-02)
 
-
 ### Bug Fixes
 
-* rename build stage to base in Dockerfile ([2437d46](https://github.com/m6o4solutions/payload-template-project/commit/2437d469b3cfb9f9b34f7cbc9f45bb18e1f98142))
+- rename build stage to base in Dockerfile
+  ([2437d46](https://github.com/m6o4solutions/payload-template-project/commit/2437d469b3cfb9f9b34f7cbc9f45bb18e1f98142))
 
 ## [1.13.3](https://github.com/m6o4solutions/payload-template-project/compare/v1.13.2...v1.13.3) (2025-12-02)
 
-
 ### Bug Fixes
 
-* change base image to Node.js 22-alpine ([9d5aff0](https://github.com/m6o4solutions/payload-template-project/commit/9d5aff0e1efe8ae2a0f178117afe0e32418f3db4))
+- change base image to Node.js 22-alpine
+  ([9d5aff0](https://github.com/m6o4solutions/payload-template-project/commit/9d5aff0e1efe8ae2a0f178117afe0e32418f3db4))
 
 ## [1.13.2](https://github.com/m6o4solutions/payload-template-project/compare/v1.13.1...v1.13.2) (2025-12-02)
 
-
 ### Bug Fixes
 
-* Implement mock database adapter for Docker builds ([50ee60c](https://github.com/m6o4solutions/payload-template-project/commit/50ee60c63473ab081b0a5e6425870650fd11c663))
+- Implement mock database adapter for Docker builds
+  ([50ee60c](https://github.com/m6o4solutions/payload-template-project/commit/50ee60c63473ab081b0a5e6425870650fd11c663))
 
 ## [1.13.1](https://github.com/m6o4solutions/payload-template-project/compare/v1.13.0...v1.13.1) (2025-11-20)
 
