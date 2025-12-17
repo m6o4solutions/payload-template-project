@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.15.0...v1.16.0) (2025-12-17)
+
+
+### Features
+
+* add PAYLOAD_SECRET as a build-time environment variable ([0ed2903](https://github.com/m6o4solutions/payload-template-project/commit/0ed2903a9b77b4b87b007f17873e198680361cd9))
+
 # [1.15.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.14.0...v1.15.0) (2025-12-17)
 
 ### Features
