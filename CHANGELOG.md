@@ -1,3 +1,10 @@
+# [1.18.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.17.0...v1.18.0) (2025-12-18)
+
+
+### Features
+
+* derive image name dynamically for Docker GHCR workflow ([5c68b59](https://github.com/m6o4solutions/payload-template-project/commit/5c68b59889245f4a24611a145927de036a4f4831))
+
 # [1.17.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.16.0...v1.17.0) (2025-12-17)
 
 
