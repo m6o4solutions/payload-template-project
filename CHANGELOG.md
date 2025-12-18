@@ -1,3 +1,10 @@
+# [1.19.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.18.0...v1.19.0) (2025-12-18)
+
+
+### Features
+
+* create and update workflows for consistency and improved functionality ([ef64e08](https://github.com/m6o4solutions/payload-template-project/commit/ef64e086649668e4ecf160caba4c89b6d0539ac3))
+
 # [1.18.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.17.0...v1.18.0) (2025-12-18)
 
 ### Features
