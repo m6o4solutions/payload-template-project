@@ -23,6 +23,6 @@ jobs:
         with:
           image-names: ${{ steps.image.outputs.name }}
           cut-off: 1 minute ago UTC
-          keep-at-least: 2
+          keep-n-most-recent: 2
           account: ${{ github.repository_owner }}
           token: ${{ secrets.GITHUB_TOKEN }}
