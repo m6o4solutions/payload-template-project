@@ -1,15 +1,15 @@
 name: Cleanup Old Docker Image from GHCR
 
 on:
-  schedule:
-    - cron: "0 2 * * 0"
-  workflow_dispatch:
+  schedule: 
+    - cron:  "0 2 * * 0"
+  workflow_dispatch: 
 
 env:
-  REGISTRY: ghcr.io
+  REGISTRY:  ghcr.io
 
 jobs:
-  cleanup:
+  cleanup: 
     runs-on: ubuntu-latest
     permissions:
       packages: write
@@ -22,11 +22,11 @@ jobs:
           echo "name=${GITHUB_REPOSITORY##*/}" >> $GITHUB_OUTPUT
 
       - name: Delete Old Docker Images
-        uses: snok/container-retention-policy@v3.0.1
+        uses: snok/container-retention-policy@v2.2.1
         with:
           image-names: ${{ steps.image.outputs.name }}
-          cut-off: 1 minute ago UTC
-          keep-n-most-recent: 2
-          account: ${{ github.repository_owner }}
+          cut-off: One week ago UTC
+          keep-at-least: 2
+          account-type: personal
           token: ${{ secrets.GITHUB_TOKEN }}
-          registry: ${{ env.REGISTRY }}
+          token-type: github-token
