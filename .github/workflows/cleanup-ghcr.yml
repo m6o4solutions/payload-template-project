@@ -1,15 +1,15 @@
 name: Cleanup Old Docker Image from GHCR
 
 on:
-  schedule: 
-    - cron:  "0 2 * * 0"
-  workflow_dispatch: 
+  schedule:
+    - cron: "0 2 * * 0"
+  workflow_dispatch:
 
 env:
-  REGISTRY:  ghcr.io
+  REGISTRY: ghcr.io
 
 jobs:
-  cleanup: 
+  cleanup:
     runs-on: ubuntu-latest
     permissions:
       packages: write
@@ -25,7 +25,7 @@ jobs:
         uses: snok/container-retention-policy@v2.2.1
         with:
           image-names: ${{ steps.image.outputs.name }}
-          cut-off: One week ago UTC
+          cut-off: One minute ago UTC
           keep-at-least: 2
           account-type: personal
           token: ${{ secrets.GITHUB_TOKEN }}
