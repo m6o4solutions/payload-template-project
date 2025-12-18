@@ -1,6 +1,6 @@
 {
 	"name": "payload-template",
-	"version": "1.13.1",
+	"version": "1.18.0",
 	"description": "Template to get started with Next.js, Payload 3.0, MongoDB and Tailwind CSS.",
 	"license": "MIT",
 	"type": "module",
