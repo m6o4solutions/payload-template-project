@@ -36,9 +36,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images:
-            ${{ env.REGISTRY }}/${{ github.repository_owner }}/${{
-            steps.image.outputs.name }}
+          images: ${{ env.REGISTRY }}/${{ github.repository_owner }}/${{ steps.image.outputs.name }}
           tags: |
             type=raw,value=latest
             type=sha,format=short
