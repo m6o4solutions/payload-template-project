@@ -1,3 +1,11 @@
+## [1.19.1](https://github.com/m6o4solutions/payload-template-project/compare/v1.19.0...v1.19.1) (2025-12-18)
+
+
+### Bug Fixes
+
+* correct parameter name for Docker image retention policy ([eb3b59e](https://github.com/m6o4solutions/payload-template-project/commit/eb3b59e504c5fe7b398f857e9064da21d7a55c9b))
+* update container-retention-policy action to version 3.0.1 ([ac6dfc3](https://github.com/m6o4solutions/payload-template-project/commit/ac6dfc3cabb8f48f4710e5c6278bc17cbaaf64ec))
+
 # [1.19.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.18.0...v1.19.0) (2025-12-18)
 
 
