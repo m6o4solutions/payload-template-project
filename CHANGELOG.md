@@ -1,3 +1,10 @@
+## [1.19.2](https://github.com/m6o4solutions/payload-template-project/compare/v1.19.1...v1.19.2) (2025-12-18)
+
+
+### Bug Fixes
+
+* add environment variable for registry in cleanup workflow ([d8482d1](https://github.com/m6o4solutions/payload-template-project/commit/d8482d18f444ff0825a1c9215dfda0f560f3f427))
+
 ## [1.19.1](https://github.com/m6o4solutions/payload-template-project/compare/v1.19.0...v1.19.1) (2025-12-18)
 
 
