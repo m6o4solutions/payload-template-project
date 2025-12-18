@@ -1,3 +1,10 @@
+## [1.19.3](https://github.com/m6o4solutions/payload-template-project/compare/v1.19.2...v1.19.3) (2025-12-18)
+
+
+### Bug Fixes
+
+* modify ghcr cleanup workflow configuration ([4f2a221](https://github.com/m6o4solutions/payload-template-project/commit/4f2a2216344a462579712b2f79d4186f10349ae6))
+
 ## [1.19.2](https://github.com/m6o4solutions/payload-template-project/compare/v1.19.1...v1.19.2) (2025-12-18)
 
 
