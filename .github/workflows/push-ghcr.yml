@@ -20,7 +20,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Derive image name
+      - name: Derive Image Name
         id: image
         run: |
           echo "name=${GITHUB_REPOSITORY##*/}" >> $GITHUB_OUTPUT
@@ -30,9 +30,9 @@ jobs:
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
-          password: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Extract metadata (tags, labels) for Docker
+      - name: Extract Metadata (tags, labels) for Docker
         id: meta
         uses: docker/metadata-action@v5
         with:
@@ -41,7 +41,7 @@ jobs:
             type=raw,value=latest
             type=sha,format=short
 
-      - name: Build and push image to GHCR
+      - name: Build and Push Image to GHCR
         uses: docker/build-push-action@v5
         with:
           context: .
