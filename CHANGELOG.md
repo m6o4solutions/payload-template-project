@@ -1,3 +1,10 @@
+## [1.19.4](https://github.com/m6o4solutions/payload-template-project/compare/v1.19.3...v1.19.4) (2025-12-18)
+
+
+### Bug Fixes
+
+* update cut-off time for old Docker images to one minute ago UTC ([40891aa](https://github.com/m6o4solutions/payload-template-project/commit/40891aa48409506c90da408f40dc7813f60ae6eb))
+
 ## [1.19.3](https://github.com/m6o4solutions/payload-template-project/compare/v1.19.2...v1.19.3) (2025-12-18)
 
 
