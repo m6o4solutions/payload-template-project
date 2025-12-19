@@ -27,6 +27,6 @@ jobs:
           account: user
           token: ${{ secrets.GITHUB_TOKEN }}
           image-names: ${{ steps.image.outputs.name }}
-          cut-off: One minute ago UTC
+          cut-off: 0
           keep-n-most-recent: 2
           dry-run: false
