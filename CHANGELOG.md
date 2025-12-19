@@ -1,3 +1,11 @@
+# [1.20.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.19.6...v1.20.0) (2025-12-19)
+
+
+### Features
+
+* add ClarityTracker component and integrate Microsoft Clarity ([1917c0b](https://github.com/m6o4solutions/payload-template-project/commit/1917c0b4a49d202af1eb82b31c606ae51a7083a0))
+* add reCAPTCHA secret key and Microsoft Clarity project ID ([154eda7](https://github.com/m6o4solutions/payload-template-project/commit/154eda791febe1d5893f20713dcccfe4bdcd3539))
+
 ## [1.19.6](https://github.com/m6o4solutions/payload-template-project/compare/v1.19.5...v1.19.6) (2025-12-19)
 
 
