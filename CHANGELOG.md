@@ -1,3 +1,10 @@
+## [1.19.5](https://github.com/m6o4solutions/payload-template-project/compare/v1.19.4...v1.19.5) (2025-12-19)
+
+
+### Bug Fixes
+
+* update container-retention-policy action to v3.0.1 and clean config ([9ca5903](https://github.com/m6o4solutions/payload-template-project/commit/9ca5903b9516d8ee7588daa52895fe5815c935af))
+
 ## [1.19.4](https://github.com/m6o4solutions/payload-template-project/compare/v1.19.3...v1.19.4) (2025-12-18)
 
 
