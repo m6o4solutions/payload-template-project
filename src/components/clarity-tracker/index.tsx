@@ -3,7 +3,7 @@
 import clarity from "@microsoft/clarity";
 import { useEffect } from "react";
 
-export const ClarityTracker = () => {
+const ClarityTracker = () => {
 	useEffect(() => {
 		const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID;
 
@@ -24,3 +24,5 @@ export const ClarityTracker = () => {
 
 	return null;
 };
+
+export { ClarityTracker };
