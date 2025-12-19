@@ -1,3 +1,4 @@
+import { ClarityTracker } from "@/components/clarity-tracker";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import { Footer } from "@/payload/blocks/globals/footer/component";
@@ -23,6 +24,9 @@ const RootLayout = async (props: { children: ReactNode }) => {
 		<html lang="en" suppressHydrationWarning>
 			{/* apply base styles, flex column layout for full viewport height, and the inter font class */}
 			<body className={cn("flex h-screen flex-col", inter.className)}>
+				{/* track user behavior early in the lifecycle to catch session starts */}
+				<ClarityTracker />
+
 				{/* theme provider manages dark/light mode state using the 'class' attribute on the html element */}
 				<ThemeProvider
 					attribute="class"
