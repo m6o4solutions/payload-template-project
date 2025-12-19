@@ -1,3 +1,10 @@
+## [1.19.6](https://github.com/m6o4solutions/payload-template-project/compare/v1.19.5...v1.19.6) (2025-12-19)
+
+
+### Bug Fixes
+
+* change cut-off time to 0 in cleanup workflow ([1418e78](https://github.com/m6o4solutions/payload-template-project/commit/1418e78ca49e4647b83b6948b69d2e3bbac33219))
+
 ## [1.19.5](https://github.com/m6o4solutions/payload-template-project/compare/v1.19.4...v1.19.5) (2025-12-19)
 
 
