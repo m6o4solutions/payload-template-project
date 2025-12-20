@@ -1,3 +1,10 @@
+# [1.21.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.20.0...v1.21.0) (2025-12-20)
+
+
+### Features
+
+* add initial docker-compose configuration for payload-template service ([8d2089b](https://github.com/m6o4solutions/payload-template-project/commit/8d2089ba7a17bbd618d67a69f74ba722812bd462))
+
 # [1.20.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.19.6...v1.20.0) (2025-12-19)
 
 
