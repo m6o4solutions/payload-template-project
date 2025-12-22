@@ -21,11 +21,16 @@ const nextConfig: NextConfig = {
 		resolveExtensions: [".mdx", ".tsx", ".ts", ".jsx", ".js", ".mjs", ".json"],
 	},
 	webpack: (webpackConfig) => {
+		// existing extension alias config
 		webpackConfig.resolve.extensionAlias = {
 			".cjs": [".cts", ".cjs"],
 			".js": [".ts", ".tsx", ".js", ".jsx"],
 			".mjs": [".mts", ".mjs"],
 		};
+
+		// suppress the "Critical dependency" warning from Payload
+		webpackConfig.ignoreWarnings = [...(webpackConfig.ignoreWarnings || []), { module: /node_modules\/payload/ }];
+
 		return webpackConfig;
 	},
 };
