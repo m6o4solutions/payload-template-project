@@ -1,4 +1,5 @@
 import { ClarityTracker } from "@/components/clarity-tracker";
+import { ClarityTrackerDev } from "@/components/clarity-tracker-dev";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import { Footer } from "@/payload/blocks/globals/footer/component";
@@ -26,6 +27,9 @@ const RootLayout = async (props: { children: ReactNode }) => {
 			<body className={cn("flex h-screen flex-col", inter.className)}>
 				{/* track user behavior early in the lifecycle to catch session starts */}
 				<ClarityTracker />
+
+				{/* track user behavior early in development to see if the config is functional */}
+				{/* <ClarityTrackerDev /> */}
 
 				{/* theme provider manages dark/light mode state using the 'class' attribute on the html element */}
 				<ThemeProvider
