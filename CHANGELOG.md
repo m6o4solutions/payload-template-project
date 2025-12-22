@@ -1,3 +1,10 @@
+## [1.21.1](https://github.com/m6o4solutions/payload-template-project/compare/v1.21.0...v1.21.1) (2025-12-22)
+
+
+### Bug Fixes
+
+* update limit to 0 for fetching published pages in static params ([5a8a878](https://github.com/m6o4solutions/payload-template-project/commit/5a8a878db5bd9b299ec1d2334bebb22eca318d79))
+
 # [1.21.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.20.0...v1.21.0) (2025-12-20)
 
 
