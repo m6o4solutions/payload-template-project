@@ -19,7 +19,7 @@ const generateStaticParams = async () => {
 		collection: "pages",
 		// only find published pages for static generation
 		draft: false,
-		limit: 1000,
+		limit: 0,
 		// override access is false to respect standard read rules for static generation
 		overrideAccess: false,
 		pagination: false,
