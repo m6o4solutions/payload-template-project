@@ -1,3 +1,10 @@
+# [1.25.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.24.0...v1.25.0) (2025-12-22)
+
+
+### Features
+
+* add NEXT_PUBLIC_CLARITY_ID as build-time environment variable ([bfe70bc](https://github.com/m6o4solutions/payload-template-project/commit/bfe70bcb4b89387550ca57f3b9f7d7dbe910feee))
+
 # [1.24.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.23.0...v1.24.0) (2025-12-22)
 
 
