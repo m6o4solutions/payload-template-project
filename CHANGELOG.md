@@ -1,74 +1,76 @@
 ## [1.21.1](https://github.com/m6o4solutions/payload-template-project/compare/v1.21.0...v1.21.1) (2025-12-22)
 
-
 ### Bug Fixes
 
-* update limit to 0 for fetching published pages in static params ([5a8a878](https://github.com/m6o4solutions/payload-template-project/commit/5a8a878db5bd9b299ec1d2334bebb22eca318d79))
+- update limit to 0 for fetching published pages in static params
+  ([5a8a878](https://github.com/m6o4solutions/payload-template-project/commit/5a8a878db5bd9b299ec1d2334bebb22eca318d79))
 
 # [1.21.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.20.0...v1.21.0) (2025-12-20)
 
-
 ### Features
 
-* add initial docker-compose configuration for payload-template service ([8d2089b](https://github.com/m6o4solutions/payload-template-project/commit/8d2089ba7a17bbd618d67a69f74ba722812bd462))
+- add initial docker-compose configuration for payload-template service
+  ([8d2089b](https://github.com/m6o4solutions/payload-template-project/commit/8d2089ba7a17bbd618d67a69f74ba722812bd462))
 
 # [1.20.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.19.6...v1.20.0) (2025-12-19)
 
-
 ### Features
 
-* add ClarityTracker component and integrate Microsoft Clarity ([1917c0b](https://github.com/m6o4solutions/payload-template-project/commit/1917c0b4a49d202af1eb82b31c606ae51a7083a0))
-* add reCAPTCHA secret key and Microsoft Clarity project ID ([154eda7](https://github.com/m6o4solutions/payload-template-project/commit/154eda791febe1d5893f20713dcccfe4bdcd3539))
+- add ClarityTracker component and integrate Microsoft Clarity
+  ([1917c0b](https://github.com/m6o4solutions/payload-template-project/commit/1917c0b4a49d202af1eb82b31c606ae51a7083a0))
+- add reCAPTCHA secret key and Microsoft Clarity project ID
+  ([154eda7](https://github.com/m6o4solutions/payload-template-project/commit/154eda791febe1d5893f20713dcccfe4bdcd3539))
 
 ## [1.19.6](https://github.com/m6o4solutions/payload-template-project/compare/v1.19.5...v1.19.6) (2025-12-19)
 
-
 ### Bug Fixes
 
-* change cut-off time to 0 in cleanup workflow ([1418e78](https://github.com/m6o4solutions/payload-template-project/commit/1418e78ca49e4647b83b6948b69d2e3bbac33219))
+- change cut-off time to 0 in cleanup workflow
+  ([1418e78](https://github.com/m6o4solutions/payload-template-project/commit/1418e78ca49e4647b83b6948b69d2e3bbac33219))
 
 ## [1.19.5](https://github.com/m6o4solutions/payload-template-project/compare/v1.19.4...v1.19.5) (2025-12-19)
 
-
 ### Bug Fixes
 
-* update container-retention-policy action to v3.0.1 and clean config ([9ca5903](https://github.com/m6o4solutions/payload-template-project/commit/9ca5903b9516d8ee7588daa52895fe5815c935af))
+- update container-retention-policy action to v3.0.1 and clean config
+  ([9ca5903](https://github.com/m6o4solutions/payload-template-project/commit/9ca5903b9516d8ee7588daa52895fe5815c935af))
 
 ## [1.19.4](https://github.com/m6o4solutions/payload-template-project/compare/v1.19.3...v1.19.4) (2025-12-18)
 
-
 ### Bug Fixes
 
-* update cut-off time for old Docker images to one minute ago UTC ([40891aa](https://github.com/m6o4solutions/payload-template-project/commit/40891aa48409506c90da408f40dc7813f60ae6eb))
+- update cut-off time for old Docker images to one minute ago UTC
+  ([40891aa](https://github.com/m6o4solutions/payload-template-project/commit/40891aa48409506c90da408f40dc7813f60ae6eb))
 
 ## [1.19.3](https://github.com/m6o4solutions/payload-template-project/compare/v1.19.2...v1.19.3) (2025-12-18)
 
-
 ### Bug Fixes
 
-* modify ghcr cleanup workflow configuration ([4f2a221](https://github.com/m6o4solutions/payload-template-project/commit/4f2a2216344a462579712b2f79d4186f10349ae6))
+- modify ghcr cleanup workflow configuration
+  ([4f2a221](https://github.com/m6o4solutions/payload-template-project/commit/4f2a2216344a462579712b2f79d4186f10349ae6))
 
 ## [1.19.2](https://github.com/m6o4solutions/payload-template-project/compare/v1.19.1...v1.19.2) (2025-12-18)
 
-
 ### Bug Fixes
 
-* add environment variable for registry in cleanup workflow ([d8482d1](https://github.com/m6o4solutions/payload-template-project/commit/d8482d18f444ff0825a1c9215dfda0f560f3f427))
+- add environment variable for registry in cleanup workflow
+  ([d8482d1](https://github.com/m6o4solutions/payload-template-project/commit/d8482d18f444ff0825a1c9215dfda0f560f3f427))
 
 ## [1.19.1](https://github.com/m6o4solutions/payload-template-project/compare/v1.19.0...v1.19.1) (2025-12-18)
 
-
 ### Bug Fixes
 
-* correct parameter name for Docker image retention policy ([eb3b59e](https://github.com/m6o4solutions/payload-template-project/commit/eb3b59e504c5fe7b398f857e9064da21d7a55c9b))
-* update container-retention-policy action to version 3.0.1 ([ac6dfc3](https://github.com/m6o4solutions/payload-template-project/commit/ac6dfc3cabb8f48f4710e5c6278bc17cbaaf64ec))
+- correct parameter name for Docker image retention policy
+  ([eb3b59e](https://github.com/m6o4solutions/payload-template-project/commit/eb3b59e504c5fe7b398f857e9064da21d7a55c9b))
+- update container-retention-policy action to version 3.0.1
+  ([ac6dfc3](https://github.com/m6o4solutions/payload-template-project/commit/ac6dfc3cabb8f48f4710e5c6278bc17cbaaf64ec))
 
 # [1.19.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.18.0...v1.19.0) (2025-12-18)
 
-
 ### Features
 
-* create and update workflows for consistency and improved functionality ([ef64e08](https://github.com/m6o4solutions/payload-template-project/commit/ef64e086649668e4ecf160caba4c89b6d0539ac3))
+- create and update workflows for consistency and improved functionality
+  ([ef64e08](https://github.com/m6o4solutions/payload-template-project/commit/ef64e086649668e4ecf160caba4c89b6d0539ac3))
 
 # [1.18.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.17.0...v1.18.0) (2025-12-18)
 
