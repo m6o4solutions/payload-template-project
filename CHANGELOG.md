@@ -1,3 +1,10 @@
+# [1.22.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.21.1...v1.22.0) (2025-12-22)
+
+
+### Features
+
+* add CollectionCards to importMap for UI components ([0739387](https://github.com/m6o4solutions/payload-template-project/commit/07393877a1641ad19da353f098c23538e2513d57))
+
 ## [1.21.1](https://github.com/m6o4solutions/payload-template-project/compare/v1.21.0...v1.21.1) (2025-12-22)
 
 ### Bug Fixes
