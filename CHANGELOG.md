@@ -1,3 +1,10 @@
+# [1.24.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.23.0...v1.24.0) (2025-12-22)
+
+
+### Features
+
+* enhance ClarityTracker for improved debugging in development mode ([7598402](https://github.com/m6o4solutions/payload-template-project/commit/75984023fcf3201a753650cac295994351b42277))
+
 # [1.23.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.22.0...v1.23.0) (2025-12-22)
 
 
