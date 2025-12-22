@@ -21,7 +21,6 @@ const nextConfig: NextConfig = {
 		resolveExtensions: [".mdx", ".tsx", ".ts", ".jsx", ".js", ".mjs", ".json"],
 	},
 	webpack: (webpackConfig) => {
-		// existing extension alias config
 		webpackConfig.resolve.extensionAlias = {
 			".cjs": [".cts", ".cjs"],
 			".js": [".ts", ".tsx", ".js", ".jsx"],
