@@ -1,3 +1,10 @@
+# [1.23.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.22.0...v1.23.0) (2025-12-22)
+
+
+### Features
+
+* add ClarityTrackerDev for enhanced user behavior tracking in dev ([03f1514](https://github.com/m6o4solutions/payload-template-project/commit/03f1514b7c72c1bbb04836ba098a86304bfa4240))
+
 # [1.22.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.21.1...v1.22.0) (2025-12-22)
 
 
