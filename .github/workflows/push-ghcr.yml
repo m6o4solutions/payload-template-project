@@ -57,5 +57,6 @@ jobs:
           build-args: |
             DATABASE_URI_DEV=${{ secrets.DATABASE_URI_DEV }}
             DATABASE_URI_PRD=${{ secrets.DATABASE_URI_PRD }}
+            NEXT_PUBLIC_CLARITY_ID=${{ secrets.NEXT_PUBLIC_CLARITY_ID }}
             NEXT_PUBLIC_SERVER_URL=${{ secrets.NEXT_PUBLIC_SERVER_URL }}
             PAYLOAD_SECRET=${{ secrets.PAYLOAD_SECRET }}
