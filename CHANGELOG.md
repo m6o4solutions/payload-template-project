@@ -1,3 +1,10 @@
+# [1.26.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.25.0...v1.26.0) (2025-12-23)
+
+
+### Features
+
+* add Docker Buildx setup and caching to GHCR workflow ([cebbd7b](https://github.com/m6o4solutions/payload-template-project/commit/cebbd7b599f1d005c0d7ef8a1aaf65de11e1674b))
+
 # [1.25.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.24.0...v1.25.0) (2025-12-22)
 
 
