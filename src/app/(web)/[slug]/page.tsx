@@ -8,6 +8,8 @@ import { draftMode } from "next/headers";
 import { getPayload } from "payload";
 import { cache } from "react";
 
+export const dynamic = "force-dynamic";
+
 /**
  * generates the static path segments for all published pages in the 'pages' collection,
  * excluding the 'home' page. this is used by next.js for static site generation (ssg).
