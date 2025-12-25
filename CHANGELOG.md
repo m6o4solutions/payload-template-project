@@ -1,3 +1,10 @@
+# [1.27.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.26.1...v1.27.0) (2025-12-25)
+
+
+### Features
+
+* add dynamic export for force-dynamic rendering in page component ([33e6c7c](https://github.com/m6o4solutions/payload-template-project/commit/33e6c7cbec98ec4136c38371c8e52575d71798c4))
+
 ## [1.26.1](https://github.com/m6o4solutions/payload-template-project/compare/v1.26.0...v1.26.1) (2025-12-25)
 
 
