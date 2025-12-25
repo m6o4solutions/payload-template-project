@@ -1,3 +1,10 @@
+## [1.28.1](https://github.com/m6o4solutions/payload-template-project/compare/v1.28.0...v1.28.1) (2025-12-25)
+
+
+### Bug Fixes
+
+* update MongoDB connection URIs for local development ([f2eeffc](https://github.com/m6o4solutions/payload-template-project/commit/f2eeffc3728fbc9f44bb02274f39dfa9d5e0bf9e))
+
 # [1.28.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.27.0...v1.28.0) (2025-12-25)
 
 
