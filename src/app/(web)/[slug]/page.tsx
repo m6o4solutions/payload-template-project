@@ -8,22 +8,11 @@ import { draftMode } from "next/headers";
 import { getPayload } from "payload";
 import { cache } from "react";
 
-export const dynamic = "force-dynamic";
-
 /**
  * generates the static path segments for all published pages in the 'pages' collection,
  * excluding the 'home' page. this is used by next.js for static site generation (ssg).
  */
 const generateStaticParams = async () => {
-	// GUARD CLAUSE: if we are in the CI/Docker build using the dummy placeholder,
-	// skip the database query entirely.
-	if (
-		process.env.DATABASE_URI_PRD?.includes("build-placeholder") ||
-		process.env.DATABASE_URI_DEV?.includes("build-placeholder")
-	) {
-		return [];
-	}
-
 	const payload = await getPayload({ config: config });
 
 	const pages = await payload.find({

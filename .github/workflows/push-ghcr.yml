@@ -20,6 +20,12 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
+      - name: Start Ephemeral MongoDB
+        run: |
+          docker run -d -p 27017:27017 --name ephemeral-mongo mongo:latest
+          echo "Waiting for MongoDB to start..."
+          sleep 5
+
       - name: Derive Image Name
         id: image
         run: |
@@ -55,9 +61,11 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          add-hosts: |
+            host.docker.internal:host-gateway
           build-args: |
             NEXT_PUBLIC_CLARITY_ID=${{ secrets.NEXT_PUBLIC_CLARITY_ID }}
             NEXT_PUBLIC_SERVER_URL=${{ secrets.NEXT_PUBLIC_SERVER_URL }}
-            DATABASE_URI_DEV=mongodb://localhost:27017/build-placeholder
-            DATABASE_URI_PRD=mongodb://localhost:27017/build-placeholder
+            DATABASE_URI_DEV=mongodb://host.docker.internal:27017/payload-build-db
+            DATABASE_URI_PRD=mongodb://host.docker.internal:27017/payload-build-db
             PAYLOAD_SECRET=build_time_only_secret_value
