@@ -1,7 +1,7 @@
 # check=skip=SecretsUsedInArgOrEnv
 # syntax=docker.io/docker/dockerfile:1
 
-FROM node:24-alpine AS base
+FROM node:22-alpine AS base
 
 # install dependencies only when needed
 FROM base AS deps
@@ -13,7 +13,7 @@ WORKDIR /app
 # install dependencies based on the preferred package manager
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 
-RUN \
+RUN --mount=type=cache,target=/root/.local/share/pnpm/store \
   if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
   elif [ -f package-lock.json ]; then npm ci; \
   elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm i --frozen-lockfile; \
@@ -25,11 +25,16 @@ FROM base AS builder
 
 WORKDIR /app
 
-# make build-time env vars available
-ARG DATABASE_URI_DEV
-ARG DATABASE_URI_PRD
+# ARGs for next.js client-side bundling (required)
+# these MUST be real values as they are baked into the JS bundle
 ARG NEXT_PUBLIC_CLARITY_ID
 ARG NEXT_PUBLIC_SERVER_URL
+
+# ARGs for payload cms build process (placeholders allowed)
+# we accept these to prevent the build from crashing, but they will be populated 
+# with dummy values by github actions to protect secrets
+ARG DATABASE_URI_DEV
+ARG DATABASE_URI_PRD
 ARG PAYLOAD_SECRET
 
 ENV DATABASE_URI_DEV=$DATABASE_URI_DEV
@@ -42,7 +47,7 @@ COPY --from=deps /app/node_modules ./node_modules
 
 COPY . .
 
-# uncomment the following line in case you want to disable telemetry during the build.
+# disable telemetry during the build
 ENV NEXT_TELEMETRY_DISABLED=1
 
 RUN \
@@ -59,7 +64,7 @@ WORKDIR /app
 
 ENV NODE_ENV=production
 
-# uncomment the following line in case you want to disable telemetry during runtime.
+# disable telemetry during runtime
 ENV NEXT_TELEMETRY_DISABLED=1
 
 RUN addgroup --system --gid 1001 nodejs
