@@ -1,3 +1,10 @@
+# [1.28.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.27.0...v1.28.0) (2025-12-25)
+
+
+### Features
+
+* update MongoDB setup and database URIs for Docker compatibility ([2d718c9](https://github.com/m6o4solutions/payload-template-project/commit/2d718c9290262c888f12097fffbc699d282f9dc4))
+
 # [1.27.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.26.1...v1.27.0) (2025-12-25)
 
 
