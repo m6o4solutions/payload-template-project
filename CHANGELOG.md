@@ -1,3 +1,10 @@
+## [1.26.1](https://github.com/m6o4solutions/payload-template-project/compare/v1.26.0...v1.26.1) (2025-12-25)
+
+
+### Bug Fixes
+
+* add guard clause to skip database query in CI/Docker builds ([9cc0ee4](https://github.com/m6o4solutions/payload-template-project/commit/9cc0ee4be7c8d9f622182e4e4938180d625230f7))
+
 # [1.26.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.25.0...v1.26.0) (2025-12-23)
 
 
