@@ -13,6 +13,7 @@ WORKDIR /app
 # install dependencies based on the preferred package manager
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 
+# cache mount for faster dependency install
 RUN --mount=type=cache,target=/root/.local/share/pnpm/store \
   if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
   elif [ -f package-lock.json ]; then npm ci; \
