@@ -49,6 +49,8 @@ jobs:
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
+        with:
+          driver-opts: network=host
 
       - name: Build and Push Image to GHCR
         uses: docker/build-push-action@v5
@@ -61,11 +63,9 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          add-hosts: |
-            host.docker.internal:host-gateway
           build-args: |
             NEXT_PUBLIC_CLARITY_ID=${{ secrets.NEXT_PUBLIC_CLARITY_ID }}
             NEXT_PUBLIC_SERVER_URL=${{ secrets.NEXT_PUBLIC_SERVER_URL }}
-            DATABASE_URI_DEV=mongodb://host.docker.internal:27017/payload-build-db
-            DATABASE_URI_PRD=mongodb://host.docker.internal:27017/payload-build-db
+            DATABASE_URI_DEV=mongodb://localhost:27017/payload-build-db
+            DATABASE_URI_PRD=mongodb://localhost:27017/payload-build-db
             PAYLOAD_SECRET=build_time_only_secret_value
