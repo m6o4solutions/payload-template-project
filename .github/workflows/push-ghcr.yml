@@ -50,13 +50,14 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
+          platforms: linux/amd64,linux/arm64
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
           build-args: |
-            DATABASE_URI_DEV=${{ secrets.DATABASE_URI_DEV }}
-            DATABASE_URI_PRD=${{ secrets.DATABASE_URI_PRD }}
             NEXT_PUBLIC_CLARITY_ID=${{ secrets.NEXT_PUBLIC_CLARITY_ID }}
             NEXT_PUBLIC_SERVER_URL=${{ secrets.NEXT_PUBLIC_SERVER_URL }}
-            PAYLOAD_SECRET=${{ secrets.PAYLOAD_SECRET }}
+            DATABASE_URI_DEV=mongodb://localhost:27017/build-placeholder
+            DATABASE_URI_PRD=mongodb://localhost:27017/build-placeholder
+            PAYLOAD_SECRET=build_time_only_secret_value
