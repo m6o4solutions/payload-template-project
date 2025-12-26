@@ -13,8 +13,7 @@ WORKDIR /app
 # install dependencies based on the preferred package manager
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 
-# cache mount for faster dependency install
-RUN --mount=type=cache,target=/root/.local/share/pnpm/store \
+RUN \
   if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
   elif [ -f package-lock.json ]; then npm ci; \
   elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm i --frozen-lockfile; \
@@ -28,14 +27,10 @@ WORKDIR /app
 
 # ARGs for next.js client-side bundling (required)
 # these MUST be real values as they are baked into the JS bundle
-ARG NEXT_PUBLIC_CLARITY_ID
-ARG NEXT_PUBLIC_SERVER_URL
-
-# ARGs for payload cms build process (placeholders allowed)
-# we accept these to prevent the build from crashing, but they will be populated 
-# with dummy values by github actions to protect secrets
 ARG DATABASE_URI_DEV
 ARG DATABASE_URI_PRD
+ARG NEXT_PUBLIC_CLARITY_ID
+ARG NEXT_PUBLIC_SERVER_URL
 ARG PAYLOAD_SECRET
 
 ENV DATABASE_URI_DEV=$DATABASE_URI_DEV
