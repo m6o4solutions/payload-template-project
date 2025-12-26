@@ -1,65 +1,65 @@
 ## [1.28.1](https://github.com/m6o4solutions/payload-template-project/compare/v1.28.0...v1.28.1) (2025-12-25)
 
-
 ### Bug Fixes
 
-* update MongoDB connection URIs for local development ([f2eeffc](https://github.com/m6o4solutions/payload-template-project/commit/f2eeffc3728fbc9f44bb02274f39dfa9d5e0bf9e))
+- update MongoDB connection URIs for local development
+  ([f2eeffc](https://github.com/m6o4solutions/payload-template-project/commit/f2eeffc3728fbc9f44bb02274f39dfa9d5e0bf9e))
 
 # [1.28.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.27.0...v1.28.0) (2025-12-25)
 
-
 ### Features
 
-* update MongoDB setup and database URIs for Docker compatibility ([2d718c9](https://github.com/m6o4solutions/payload-template-project/commit/2d718c9290262c888f12097fffbc699d282f9dc4))
+- update MongoDB setup and database URIs for Docker compatibility
+  ([2d718c9](https://github.com/m6o4solutions/payload-template-project/commit/2d718c9290262c888f12097fffbc699d282f9dc4))
 
 # [1.27.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.26.1...v1.27.0) (2025-12-25)
 
-
 ### Features
 
-* add dynamic export for force-dynamic rendering in page component ([33e6c7c](https://github.com/m6o4solutions/payload-template-project/commit/33e6c7cbec98ec4136c38371c8e52575d71798c4))
+- add dynamic export for force-dynamic rendering in page component
+  ([33e6c7c](https://github.com/m6o4solutions/payload-template-project/commit/33e6c7cbec98ec4136c38371c8e52575d71798c4))
 
 ## [1.26.1](https://github.com/m6o4solutions/payload-template-project/compare/v1.26.0...v1.26.1) (2025-12-25)
 
-
 ### Bug Fixes
 
-* add guard clause to skip database query in CI/Docker builds ([9cc0ee4](https://github.com/m6o4solutions/payload-template-project/commit/9cc0ee4be7c8d9f622182e4e4938180d625230f7))
+- add guard clause to skip database query in CI/Docker builds
+  ([9cc0ee4](https://github.com/m6o4solutions/payload-template-project/commit/9cc0ee4be7c8d9f622182e4e4938180d625230f7))
 
 # [1.26.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.25.0...v1.26.0) (2025-12-23)
 
-
 ### Features
 
-* add Docker Buildx setup and caching to GHCR workflow ([cebbd7b](https://github.com/m6o4solutions/payload-template-project/commit/cebbd7b599f1d005c0d7ef8a1aaf65de11e1674b))
+- add Docker Buildx setup and caching to GHCR workflow
+  ([cebbd7b](https://github.com/m6o4solutions/payload-template-project/commit/cebbd7b599f1d005c0d7ef8a1aaf65de11e1674b))
 
 # [1.25.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.24.0...v1.25.0) (2025-12-22)
 
-
 ### Features
 
-* add NEXT_PUBLIC_CLARITY_ID as build-time environment variable ([bfe70bc](https://github.com/m6o4solutions/payload-template-project/commit/bfe70bcb4b89387550ca57f3b9f7d7dbe910feee))
+- add NEXT_PUBLIC_CLARITY_ID as build-time environment variable
+  ([bfe70bc](https://github.com/m6o4solutions/payload-template-project/commit/bfe70bcb4b89387550ca57f3b9f7d7dbe910feee))
 
 # [1.24.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.23.0...v1.24.0) (2025-12-22)
 
-
 ### Features
 
-* enhance ClarityTracker for improved debugging in development mode ([7598402](https://github.com/m6o4solutions/payload-template-project/commit/75984023fcf3201a753650cac295994351b42277))
+- enhance ClarityTracker for improved debugging in development mode
+  ([7598402](https://github.com/m6o4solutions/payload-template-project/commit/75984023fcf3201a753650cac295994351b42277))
 
 # [1.23.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.22.0...v1.23.0) (2025-12-22)
 
-
 ### Features
 
-* add ClarityTrackerDev for enhanced user behavior tracking in dev ([03f1514](https://github.com/m6o4solutions/payload-template-project/commit/03f1514b7c72c1bbb04836ba098a86304bfa4240))
+- add ClarityTrackerDev for enhanced user behavior tracking in dev
+  ([03f1514](https://github.com/m6o4solutions/payload-template-project/commit/03f1514b7c72c1bbb04836ba098a86304bfa4240))
 
 # [1.22.0](https://github.com/m6o4solutions/payload-template-project/compare/v1.21.1...v1.22.0) (2025-12-22)
 
-
 ### Features
 
-* add CollectionCards to importMap for UI components ([0739387](https://github.com/m6o4solutions/payload-template-project/commit/07393877a1641ad19da353f098c23538e2513d57))
+- add CollectionCards to importMap for UI components
+  ([0739387](https://github.com/m6o4solutions/payload-template-project/commit/07393877a1641ad19da353f098c23538e2513d57))
 
 ## [1.21.1](https://github.com/m6o4solutions/payload-template-project/compare/v1.21.0...v1.21.1) (2025-12-22)
 
